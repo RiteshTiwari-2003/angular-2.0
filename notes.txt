@@ -1,0 +1,79 @@
+-> Angular notes:-
+    introductiuon of angular:-
+Angular is typescript based open source famework for building dynamic , modern web application ,
+developed and maintained by google , anguler provide a comprehensive platform for creating highly responsive and scalable application.
+
+-> key feature of angular:
+1. component based architecture :
+application are build using reusable , self contained component,making the development process moduler and amintainable 
+2. two ways data binding:
+synchronizes data between the model(logic) and view(ui) in real time, reducing boilerplate code and inhancing user interaction
+3. dependency injection :
+pramotes moduler design by providing a buildin dependency injection system to manage service objects 
+4. directives : 
+extend html with custom tag or attributes, enabling developer to build dynamics interactive ui interface .
+5. rxjs(reactive programming):
+provide tools for handling asynchronous data streams , making angular application more responsive .
+6. routing and navigation :
+the build in anguler router enable the creation of single page application with seamless transition between views.
+7. ahead of time compilation :
+convert html and type script code into optimized javascript code during the build process, improving performance.
+8. cross platform support:
+anguler can be used for building web , mobile and desktop application.
+-- view layer of application 
+--> with the help of anguler we can develop single page application , single page application are those application which develop only in one page ,
+which is index.html, the data is just updated in the dom without refreshing or reloading whole application .
+that is the single page appication 
+in traditional application : whenever we go for any of the link , the entire page is reload and all, right now the single page application 
+the page is not refreah or reload .
+-> developed and maintained by google .
+
+single psge application are those application which developp only in one page , the content is updated  without reloading or refreahing whole page
+
+--> Envoirment setup(installation):-
+node js envoirment 
+   --> download and install node js 
+   node >20
+if node installed in system then for angular install angular cli(command line interface):
+it provides commands for creating , building , testing and deploying angular application.(ng command) : new generate command
+npm i @angular/cli --g
+after instaling above package when you want to check ng version type ng --version
+and in that folder where you want to put angular project open that folder in cmd and type ng new demo(project_name) and enter .
+
+--> how we run angular application:-
+go to your project folder like :- cd demo
+ng serve --o
+to run angular application every time you should run ng serve 
+and --o is a flag to open your application in a default browser if you not putting --o then you should manually open it.
+open in default port 4000
+
+why choose angular?
+1. powerful framework: 
+include all tools required for large scale application .
+2. active ecosystem: backed by google ,with frequent update and large community.
+3. scalable : well suited for enterprise level projects.
+4. typescript integration : enhance code quality with strong typing .
+
+for angular documentation refrence:-
+https://angular.dev/overview
+for project folder structure reference
+https://angular.dev/reference/configs/file-structure
+
+--> how angular application run or boot:-
+ng serve whenever i run ng serve then it goes to the angular.json file--> thenit call entry point file--> one is index.html and typescript entry point file is main.ts  
+in that index.html there is <app-root></app-root> what is the app-root app-root is selector which is define in App component the App component 
+is default component 
+so you can find that component in src/app folder in app folder app.component.ts  app.component.html app.component.css file app.component.spec.ts  
+app.component.ts (logic) 
+   in app.component.ts we find app-root selector 
+app.component.html(view)
+app.component.css (component css) 
+app.component.spec.ts (testing file)
+
+there is two type of entry point file one is index.html and one is main.ts typescript entry point file
+-> in new version > 17
+it boot the App component and load AppConfig file in the application .
+-> below it 
+it boot the AppModule and in appmodule it boot the app component 
+
+so in this way in the old approach is module based approach nut right now it changes as configuration based approach.
