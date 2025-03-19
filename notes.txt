@@ -77,3 +77,37 @@ it boot the App component and load AppConfig file in the application .
 it boot the AppModule and in appmodule it boot the app component 
 
 so in this way in the old approach is module based approach nut right now it changes as configuration based approach.
+in anular project file structure src folder is main folder where all these file folder present like :
+app folder
+index.html file which is main entry point file for single page application , this is the file where entire application is run 
+single page application are those type of application which run on index.html 
+that is file which is just render in your browser whenever you serve the application 
+the main.ts is main typescript file where the entire appication flow is working .
+
+and app folder is application folder 
+where these file present 
+app.component.css
+app.component.html,
+app.component.ts
+app.component.spec.ts
+app.config.ts,
+app.routes.ts
+here you update the all the code of the application either it commponent or bla, bla bla,
+app.routes.ts is routing file , app.config.ts is configuration file before anguler 17 there is app module but from angular 17 the moduler approach is change and configuration approach start
+
+in every project there is angular.json file:-
+cli configuration (command line configuration) for all project in the workspace , incuding configuration option for how to build, serve , 
+and test each project , 
+
+package.json file:
+configure npm package dependencies that are available to all projects in the work space ,
+this is very importent on that time when you push all code on github and dont push node_module file beacuae this file is very heavy so whenever you want to install any npmpackage again
+then you can install with the help of package.json 
+
+
+application source file :
+all the file which present under src folder are application source file;
+1. app folder: constain the component files in which your application logic and data are defined 
+2. index.html file: the main html file page that is served when someone visit your site , 
+the cli automatically adds whole javascript and css files when building your project , so you typically dont need to install or add script or link tag here 
+
