@@ -123,3 +123,8 @@ as you add component and services in your app.
 4. app.component.css : define the css stylesheet for AppComponent.
 
 5. app.component.spec.ts: define unit test for AppComponent
+
+so we see that in our index.html our default component is loaded and we are just configuring that particuler component in main.ts
+
+so main concept in angular is component :
+component play a crucial role in angular , component is core building block of the anguler application and they are used for reusability
