@@ -128,3 +128,43 @@ so we see that in our index.html our default component is loaded and we are just
 
 so main concept in angular is component :
 component play a crucial role in angular , component is core building block of the anguler application and they are used for reusability
+
+how we create a component :
+ng generate component componentname
+or
+ng g c componentname
+-> when we create a component 
+---> it create a componentname folder 
+         .ts
+         .css
+         .html
+         .spec.ts
+
+# supposen for my project i want to create two component ;
+1, one thing where you want to create -> in yur project folder my project folder is right now demo 
+so i just open the demo directory in my command , when you want to put all of the component in one folder then jsut define a folder like in demo directory
+in cmd write ng g c components/home like where components folder in main folder where we can put all component 
+like just when components folder is not present in app folder then make a components folder like this 
+so first component i just creating i shome component 
+like ng g c components/home
+and second component is i am creating about 
+like ng g c components/about
+so now when i see file structure in demo folder then in src folder in app folder a components folder present in which two folder present home and about and in these folder in every folder these four file present 
+app.component.html 
+app.component.css
+app.component.ts
+app.component.spec.ts
+** in angular 17, there is a approach of module (AppModule), so if we create a component it automatically update in AppModule 
+so that we can use that component anywhere .
+
+but from 17 version , there is concept of standalone component, if we create a component by default they are standalone.
+
+-> standalone component : standalone component are those component : they are self-contained units of code that can be used anywhere 
+in the application without being of an module 
+
+before this anguler 17 , if we create a component , it automatically load in a appmodule , if it automatically load in app module so either it can use 
+or not it execute the memory ?
+thats why the reason anguler introduced the standalone components 
+whenever you have a requirment , you just need to inject it , otherwise it can not take any of the memory .
+understand these are the standalone component.
+
