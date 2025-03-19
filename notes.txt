@@ -65,7 +65,7 @@ in that index.html there is <app-root></app-root> what is the app-root app-root 
 is default component 
 so you can find that component in src/app folder in app folder app.component.ts  app.component.html app.component.css file app.component.spec.ts  
 app.component.ts (logic) 
-   in app.component.ts we find app-root selector 
+   in app.component.ts we find app-root selector (so we can say that that app component is just called in index.html which is default component)
 app.component.html(view)
 app.component.css (component css) 
 app.component.spec.ts (testing file)
@@ -111,3 +111,15 @@ all the file which present under src folder are application source file;
 2. index.html file: the main html file page that is served when someone visit your site , 
 the cli automatically adds whole javascript and css files when building your project , so you typically dont need to install or add script or link tag here 
 
+within app folder many file present like :
+1. app.config.ts : define the application configuration that tell angular that how to assemble the application , as you add more providers 
+to the app they should declare here.
+
+2. app.component.ts:define the application's root component ,named AppComponent. the view associated with this root component becomes the root of view hierarchy
+as you add component and services in your app.
+
+3. app.component.html: define the html template associated with AppComponent
+
+4. app.component.css : define the css stylesheet for AppComponent.
+
+5. app.component.spec.ts: define unit test for AppComponent
