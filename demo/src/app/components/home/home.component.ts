@@ -8,5 +8,10 @@ import { Component } from '@angular/core';
 })
 export class HomeComponent {
   title:string="MY Home Page";
+  isActive:boolean=true;
+  imagePath:string="https://picsum.photos/200/300";
+  xyz(){
+    this.isActive=!this.isActive;
+  }
 
 }

@@ -193,3 +193,25 @@ in that data flow from one direction either from view to component or component 
     tite="Hello Guys"
     .html (and in html in view we want to render that data that is dynamic data)
     <h2>{{title}}</h2>### one way data binding from component to view
+
+    --. property binding []:
+    it allows us to bind html element attributes to a property in a component.
+    assume that in my home component i have a property like isActive , i have a varibale which is boolean , bydefult i assigning the value true 
+    so with the help of property binding we can bind this property to the attribute of the element , asume that i have a button , there is attribute disabled ([disabled]) 
+    and i am just binding to the property binding like [disabled]="isActive"
+    .ts
+    imagePath:string="";
+    .html
+    <img [src]="imagePath"/>
+
+    --> from view to component 
+       --> event binding 
+       it is achived with the hep of parenthesis (): event binding simple means event handling , it allow us to bind events such as click ,dblclick,
+       mouseover, to a method in a component 
+       eg:
+       .html
+       <button (click)="xyz()"></button>
+      .ts
+      xyz(){
+         alert("Hello");
+      }
