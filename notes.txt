@@ -175,3 +175,21 @@ so there is no make sense to add standalone true for component by default compon
 
 #### so how to call other component from another component 
 you just import app.componentname and in app folder in app.component.ts you just import alongwith routeroutlet all that component like HomeComponent , AboutComponent
+
+### started importent feature concepts:-
+so first is data binding (dynamic data binding):
+databinding work in two ways:=
+   ---> one way databinding 
+   ---. two way data binding 
+
+--. one way binding;
+in that data flow from one direction either from view to component or component to view 
+    -- from component to view :- assume that component means ts file where we have some data and in a view we want to render that data 
+    we want to display that dynamic data 
+    so from component to view we have concept of interpolation/expression 
+    {{}}
+    eg:
+    in your component file .ts i have a title 
+    tite="Hello Guys"
+    .html (and in html in view we want to render that data that is dynamic data)
+    <h2>{{title}}</h2>### one way data binding from component to view
