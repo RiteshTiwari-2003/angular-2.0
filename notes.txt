@@ -168,3 +168,4 @@ thats why the reason anguler introduced the standalone components
 whenever you have a requirment , you just need to inject it , otherwise it can not take any of the memory .
 understand these are the standalone component.
 
+--> how we call the component in another component 
