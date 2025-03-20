@@ -3,3 +3,8 @@
 Enter name : <input type="text" [(ngModel)]="name"/><br/>
 <button [disabled]="status">Enable / Disable</button>
 <button (click)="xyz()">Click Here </button>
+<hr/>
+<div *ngIf="courses.length>0 esle xyz">
+    <h4>Courses</h4>
+</div>
+<ng-template #xyz>No Courses Found</ng-template>

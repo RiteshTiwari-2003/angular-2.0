@@ -234,4 +234,35 @@ changes also in view in name value in test.component.ts like whenever we perform
 
 for this you also put in import in test.component.ts FormsModule .
 
-ngmodelis property of FormsModule and ngmodel is directive a builtin directive and by which we got two way data binding
+ngmodelis property of FormsModule and ngmodel is directive a builtin directive and by which we got two way data binding.
+
+
+--> directives in anular:-
+they are defined as classes
+that can add new behaviours to the element or modifying existing behaviours.
+with the help of it what happen assume that in a page i have some content so i want to change the look 
+and feel of the element at runtime or we want to change some dynamic data , i just want to remove that particuler element from the dom
+or we just need to add a new element these all the thing dynamically which is happen with the help of directives 
+
+--> it is used to manipulate the dom by adding new element or removing and even changing the appearence of the element .
+
+--. types of directives :
+1. component directive : every component work as a directive because it have template or template url.(app-componentname)
+2. attribute directive ; is used to make behavoiur or element changes in the appearence of a element (styles) so basically for changing the styling part and all we can use 
+the attribute directive so whenever we dynamically we want to change some style and all so we have some in build attribute directive that we are using like 
+(inbuild: ngStyle or ngClass )
+3. structural directive : structural directive is iused for the dom manipulation , it is used to make the changes in layout of the dom 
+element can be added or remove , it chANGES THE STRUCRE OF THE DOM (inbuild: *ngIf , *ngFor, *ngSwitch)
+after angular 16 we can use this like @if @for @switch 
+*ngIf :- for conditional rendering . it conditionally include template if value is true 
+eg:
+in .ts file 
+courses:[]string=["A","B","C","D"]
+.html
+<div *ngIf="courses.length>0 else xyz">
+//courses display</div>
+<ng-template #xyz>No Course found</ng-template>
+
+#### if you want to use old in build directive you need to import CommonModule in your web page 
+ngIf directive not working for this you also must need to import CommonModule in in test.component.ts and for working of ng-template you need to import NgTemplateModule in test.component.ts 
+
