@@ -171,3 +171,7 @@ understand these are the standalone component.
 --> how we call the component in another component 
 like when you add two component like home and about in app folder in src folder and when run the application it give error
 but in app folder in app.component.ts when you import AboutComponent and HomeComponent then application properly work
+so there is no make sense to add standalone true for component by default components are standalone 
+
+#### so how to call other component from another component 
+you just import app.componentname and in app folder in app.component.ts you just import alongwith routeroutlet all that component like HomeComponent , AboutComponent
