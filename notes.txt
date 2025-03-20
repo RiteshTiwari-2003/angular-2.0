@@ -215,3 +215,8 @@ in that data flow from one direction either from view to component or component 
       xyz(){
          alert("Hello");
       }
+
+   next topic :
+   ---> two way data binding 
+   ---> directives (if , for , switch)
+   ---> routing (spa)
