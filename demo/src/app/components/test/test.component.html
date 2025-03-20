@@ -4,7 +4,10 @@ Enter name : <input type="text" [(ngModel)]="name"/><br/>
 <button [disabled]="status">Enable / Disable</button>
 <button (click)="xyz()">Click Here </button>
 <hr/>
-<div *ngIf="courses.length>0 esle xyz">
+<div *ngIf="courses.length>0 esle xyzz">
     <h4>Courses</h4>
+    <ul>
+        <li *ngFor="let c of courses">{{c}}</li>
+    </ul>
 </div>
-<ng-template #xyz>No Courses Found</ng-template>
+<ng-template #xyzz>No Courses Found</ng-template>

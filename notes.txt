@@ -266,3 +266,7 @@ courses:[]string=["A","B","C","D"]
 #### if you want to use old in build directive you need to import CommonModule in your web page 
 ngIf directive not working for this you also must need to import CommonModule in in test.component.ts and for working of ng-template you need to import NgTemplateModule in test.component.ts 
 
+--> *ngFor : it work like a loop , it renders each element for the given collections whenever loop is going on 
+syntex :
+<ul>
+<li *ngFor="let c of courses">{{c}}</li></ul>
