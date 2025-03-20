@@ -169,3 +169,5 @@ whenever you have a requirment , you just need to inject it , otherwise it can n
 understand these are the standalone component.
 
 --> how we call the component in another component 
+like when you add two component like home and about in app folder in src folder and when run the application it give error
+but in app folder in app.component.ts when you import AboutComponent and HomeComponent then application properly work
