@@ -220,3 +220,18 @@ in that data flow from one direction either from view to component or component 
    ---> two way data binding 
    ---> directives (if , for , switch)
    ---> routing (spa)
+
+   ### 2 way data binding :it allow data to flow between a component and view , keeping them sync.it means that when you change the data in component then 
+   it automatically change in view . and same if there change anything in view it automatically change in component also.
+   when data change in a model the view reflect the changes and vice versa .
+   this two way data binding achived withthe help of property binding and event binding combination of these two binding property binding and event binding 
+   [()] : banana syntex (property + event )
+    -> used in form field 
+    to use two way data binding we use ngModel directive , so that property we finds in forms module then first we need to load FormsModule
+like we use two way data binding in test component in test.component.html we use a input tag in which we use banana syntex in which we put ngModel
+and give some property to that attribute of input like [(ngModel)]=name where name is property in test.component.ts so wheneever we update or change the input value it automatically
+changes also in view in name value in test.component.ts like whenever we perform changes in component in anydata then that data also change automatically in view .
+
+for this you also put in import in test.component.ts FormsModule .
+
+ngmodelis property of FormsModule and ngmodel is directive a builtin directive and by which we got two way data binding
