@@ -270,3 +270,7 @@ ngIf directive not working for this you also must need to import CommonModule in
 syntex :
 <ul>
 <li *ngFor="let c of courses">{{c}}</li></ul>
+
+
+---> ngStyle : basically it updates style for the element , so whenever you just need to call it anywhere , it like a property binding it just bind it [ngStyle] and as an atribute we can call anywhere 
+<element [ngStyle]="{}"></element>
