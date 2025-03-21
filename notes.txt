@@ -288,3 +288,24 @@ how we integrate bottstrap in angular
 --> restart the application 
 so whenever any changes in angular.json file you need to restart it so in command prompt in demo directry first for restart write cls and hit enter then
 run ng serve --o
+
+
+$$$$#### angular pipes :-
+they are spaical operator that allows us to transform data in our template .
+to use pipes we have (|) pipe symbols 
+--> we have inbuild pipes 
+Uppercase 
+Lowercase
+Date
+titlecase
+currency
+async
+percent
+slice 
+--> in new version to use pipe we need to import CommonModule same as we use for ngFor nad all directives 
+like in about component i use currency pipes
+in about.component.ts i put a amount:Number=568789;
+and in about.component.html i put <P> {{amount|currency}}</p> but i got error 
+because currency take string format so i replace Number from any datatype in about.component.ts or you can replace with also string but you should give value in quotes.
+
+
