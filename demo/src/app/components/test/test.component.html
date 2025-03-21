@@ -4,10 +4,25 @@ Enter name : <input type="text" [(ngModel)]="name"/><br/>
 <button [disabled]="status">Enable / Disable</button>
 <button (click)="xyz()">Click Here </button>
 <hr/>
-<div *ngIf="courses.length>0 esle xyzz">
+<!-- <div *ngIf="courses.length>0 esle xyzz">
     <h4>Courses</h4>
     <ul>
         <li *ngFor="let c of courses">{{c}}</li>
     </ul>
 </div>
-<ng-template #xyzz>No Courses Found</ng-template>
+<ng-template #xyzz>No Courses Found</ng-template> -->
+@if(courses.length>0){
+    <div>
+        <h4>Courses</h4>
+        <ul>
+            @for(c of courses; track c){
+                <li>{{c}}</li>
+            }
+        </ul>
+    </div>
+}
+
+@esle{
+    <p>No Courses Found</p>
+}
+<!-- if you are using gretaer than 16 version then you can prefer to use this @ version -->
