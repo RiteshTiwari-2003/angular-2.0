@@ -1,9 +1,9 @@
 <h2 [ngStyle]="{'color':status?'red':'green'}">Test Component</h2>
-<p [ngClass]="{'success':status===true,
-'error':status===false}">Welcome : {{name}}</p>
+<p [ngClass]="{'text-success':status===true,
+'text-danger':status===false}">Welcome : {{name}}</p>
 Enter name : <input type="text" [(ngModel)]="name"/><br/>
 <button [disabled]="status">Enable / Disable</button>
-<button (click)="xyz()">Click Here </button>
+<button (click)="xyz()" class="btn btn-primary">Click Here </button>
 <hr/>
 <!-- <div *ngIf="courses.length>0 esle xyzz">
     <h4>Courses</h4>

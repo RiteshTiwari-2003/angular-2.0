@@ -277,3 +277,14 @@ syntex :
 
 ---> ngClass : it allow us to set css class dynamically to an element .
 [ngClass]="{'success':condition}"
+
+----#### Boot strap is nothing it is css property and framework it provide us a inbuild class 
+
+how we integrate bottstrap in angular 
+   -> npm install bootstrap --save, in your project like in deo directory you first need to install bootstrap after installation of bootstrap
+   in demo in src folder in angular.json file in styles key put one more value like "node_nodules/bootstrap/dist/css/bootstrap.min.css"
+   and in scripts key put value like this "node_nodules/bootstrap/dist/js/bootstrap.bundle.js"
+
+--> restart the application 
+so whenever any changes in angular.json file you need to restart it so in command prompt in demo directry first for restart write cls and hit enter then
+run ng serve --o
