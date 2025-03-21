@@ -1,5 +1,6 @@
 <h2 [ngStyle]="{'color':status?'red':'green'}">Test Component</h2>
-<p>Welcome : {{name}}</p>
+<p [ngClass]="{'success':status===true,
+'error':status===false}">Welcome : {{name}}</p>
 Enter name : <input type="text" [(ngModel)]="name"/><br/>
 <button [disabled]="status">Enable / Disable</button>
 <button (click)="xyz()">Click Here </button>

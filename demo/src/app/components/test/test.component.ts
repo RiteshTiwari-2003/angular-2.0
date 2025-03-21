@@ -11,9 +11,11 @@ import { FormsModule } from '@angular/forms';
 export class TestComponent {
   name:string="Ritesh Tiwari";
   status:Boolean=true;
+  
   courses:string[]=["Angular","react","viue"];
   xyz(){
     this.status=!this.status;
+    
   }
 
 
