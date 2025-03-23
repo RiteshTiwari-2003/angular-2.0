@@ -346,3 +346,37 @@ if path is matched , about component is load in a routeroutlet <router-outlet></
       {path:'',component:componentname}
    ]
 }
+#### angular component lifecycle method :Every component have their own lifecycle , these lifecycle hooks are a powerful way when angular 
+initializes, updates or destroy component.
+stages --->
+Mounting (initialize)
+updating 
+unmounting(destroy)
+
+so whenever the component is load a component has its own lifecycle means first if you call the component first it is initialize when data have changes then
+updated and whenever you leave from one component to another then it is destroy
+so in this initialization phases if you want to perform some operation and all, so angular gives you some functionality to achive this
+
+*** the ifecycles hooks are ivoked automatically.
+--> methods of ifecycle :
+-> ngOnChanges(): it is called whenever one or more input properties are change, so basically we have two component and one component is loaded in another component 
+that is input property.so it is called when any input property is change.
+   -> SimpleChanges object which contain current and previous value
+   so whenever we are just implementing it so in ngonchanges we find current value and a previous value also that is the benifit of ngonchanges .
+   -> ngOnInit(): called only once when a component is initialized , it is agood place where we fetch data from api.
+   -> ngDoCheck(): called during every change detection run(custum), so wec an use that one whenever we implement our own implementaion there 
+   so custom change detection means a logic which i am just creating it 
+   then some of the functionality for child part :-> 
+         -> ngAfterContentInit(): whenever our content (html) is just load then it is called.
+         -> ngAfterContentChecked(): every time it is called if any there change happen in the content at the child lavel
+         -> ngAfterViewInit(): you are jsut loading a application but some of the javascript you want to load after some time so we can load that javascript after view init.
+         when our entire view part is initialized then the functionality is called , it is called once hwnen after angular fuly initialize the 
+         component view and child view both main parent and child then after that itt is loaded 
+         -> ngAfterViewChecked(): and whenever the parent and child views has been checked then it is called 
+   -> ngOnDestroy()-> called before component is destroyed . good place to clean up unwanted data
+
+   --> mainly used : ngOnInit(), ngOnDestroy(), ngOnChanges(),ngAfterViewInit()
+ngOnInit(): in a product component you want to display the product do i want to call the product api in the ngOnInit() 
+whenever a component is load api nis called and it will render the data 
+
+like when i was in product navbar and in product i have some unwanted data so when i want to go in contact page then i want to remove unwanted data the call ngOndestroy()
