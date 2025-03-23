@@ -336,3 +336,6 @@ export const routes:Routes=[
    {path:'about-us',component:AboutComponent}
 ];
 if path is matched , about component is load in a routeroutlet <router-outlet></router-outlet>
+<section>
+<router-outlet></router-outlet>
+</section>
