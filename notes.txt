@@ -339,3 +339,10 @@ if path is matched , about component is load in a routeroutlet <router-outlet></
 <section>
 <router-outlet></router-outlet>
 </section>
+
+#### child routes or nested routes 
+{
+   path:'url',component:componentname,children:[
+      {path:'',component:componentname}
+   ]
+}

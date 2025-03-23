@@ -6,12 +6,23 @@ import { ProductComponent } from './components/product/product.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { NotfoundComponent } from './components/notfound/notfound.component';
 
+import { DelhiComponent } from './components/contact/delhi/delhi.component';
+import { MumbaiComponent } from './components/contact/mumbai/mumbai.component';
+import { ChennaiComponent } from './components/contact/chennai/chennai.component';
+import { PunjabComponent } from './components/contact/punjab/punjab.component';
+
 export const routes: Routes = [
     {path:'',component:HomeComponent},
     {path:'about',component:AboutComponent},
     {path:'service',component:ServiceComponent},
     {path:'product',component:ProductComponent},
-    {path:'contact',component:ContactComponent},
+    {path:'contact',component:ContactComponent, children:[
+        {path:'delhi',component:DelhiComponent},
+        {path:'mumbai',component:MumbaiComponent},
+        {path:'chennai',component:ChennaiComponent},
+        {path:'punjab',component:PunjabComponent},
+        {path:'',redirectTo:'delhi',pathMatch:'full'}
+    ]},
     {path:'**',component:NotfoundComponent}
 
 ];
