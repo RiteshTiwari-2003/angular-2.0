@@ -403,3 +403,8 @@ but in old version i need to implement it like
 constructor (private http:HttpClient){
    so for whenever my component is just load for that we have ngOnInit()
 }
+
+**** communication between multiple component:-
+    -> parent to child (Input decorator)
+    and child to parent(output decorator with EventEmitter class)
+        --> in both we need 2 component one is parent and 2nd one is child
