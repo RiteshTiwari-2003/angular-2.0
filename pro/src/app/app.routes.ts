@@ -11,6 +11,7 @@ import { MumbaiComponent } from './components/contact/mumbai/mumbai.component';
 import { ChennaiComponent } from './components/contact/chennai/chennai.component';
 import { PunjabComponent } from './components/contact/punjab/punjab.component';
 import { PostsComponent } from './components/posts/posts.component';
+import { UsersComponent } from './components/users/users.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -18,6 +19,7 @@ export const routes: Routes = [
     {path:'service',component:ServiceComponent},
     {path:'product',component:ProductComponent},
     {path:'posts',component:PostsComponent},
+    {path:'users',component:UsersComponent},
     {path:'contact',component:ContactComponent, children:[
         {path:'delhi',component:DelhiComponent},
         {path:'mumbai',component:MumbaiComponent},
