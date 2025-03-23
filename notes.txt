@@ -308,4 +308,31 @@ in about.component.ts i put a amount:Number=568789;
 and in about.component.html i put <P> {{amount|currency}}</p> but i got error 
 because currency take string format so i replace Number from any datatype in about.component.ts or you can replace with also string but you should give value in quotes.
 
+#### Routing :
+It enable navigation between different views or components because it is a single page application navigating from one view to another 
+so basic definition is that it enable navigation between different views and components within a single page application.
+it allow user to move between multiple pages without reloading the whole page 
+in routing have some terms :->
+Routing have some 
+-> RouterModule: it enables routing functionality in angular
 
+-> Routes: here we define the path .(URLs) and associate components to display when a specific path is match with URL.
+eg:
+export const routes:Routes=[
+   {path:'',component:HomeComponent},
+   {path:'about-us',component:AboutComponent}
+];
+
+-> RouterOutlet:  it is the directive which is load the component when path is matched with the url (container)
+<router-outlet></router-outlet>
+-> RouterLink: it is the directive which is used to define links (hyper links) in angular application.
+<a RouterLink="/">Home </a>
+<a RouterLink="/about-us">About Us </a>
+-> 
+
+it means that in a , in a routing mechanism if you just click on about us it just check a path in this line    
+export const routes:Routes=[
+   {path:'',component:HomeComponent},
+   {path:'about-us',component:AboutComponent}
+];
+if path is matched , about component is load in a routeroutlet <router-outlet></router-outlet>
