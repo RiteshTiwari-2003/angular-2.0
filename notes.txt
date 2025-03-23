@@ -396,3 +396,10 @@ particuler package like provideHttpClient to access the api and all
 import {provideHttpClient} from '@angular/common/http';
 providers:[provideHttpClient()]
 suppose i want to create a post component to display all the post from jsonplaceholder
+in a HttpModule we have http client service , so there are two ways either you can create of instance of it but from the version 
+i just want to create the object of the http client , so in new version we need to just use instance of it like in post.component.ts 
+http=inject(HttpClient);
+but in old version i need to implement it like 
+constructor (private http:HttpClient){
+   so for whenever my component is just load for that we have ngOnInit()
+}
