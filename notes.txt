@@ -380,3 +380,19 @@ ngOnInit(): in a product component you want to display the product do i want to 
 whenever a component is load api nis called and it will render the data 
 
 like when i was in product navbar and in product i have some unwanted data so when i want to go in contact page then i want to remove unwanted data the call ngOndestroy()
+
+network call or http call :-->
+how we consume api in angular
+before the angular 16 cersion we have HttpClientModule
+HttpClient(it is an  service )
+   get | post | put |delete
+   right now we have many website which give us fake api the most common one is jsonplaceholder 
+   https://jsonplaceholder.typicode.com/ 
+-> app.config.ts in this file we just need to import provide http client
+so provideHttpClient provide http client for that package, so before the angular 17 we use the HttpClientModule but aftetr 17 we provide that 
+particuler package like provideHttpClient to access the api and all
+
+-> app.config.ts:-
+import {provideHttpClient} from '@angular/common/http';
+providers:[provideHttpClient()]
+suppose i want to create a post component to display all the post from jsonplaceholder
