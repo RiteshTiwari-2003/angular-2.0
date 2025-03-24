@@ -408,3 +408,46 @@ constructor (private http:HttpClient){
     -> parent to child (Input decorator)
     and child to parent(output decorator with EventEmitter class)
         --> in both we need 2 component one is parent and 2nd one is child
+for parent to child (input decorator):
+parent html :about component
+<h2>Parent to child with input decorator</h2>
+<button (click)="xyz()">Counter</button>
+<app-childinput [mycount]="count"></app-childinput>
+
+parent ts file :
+import { Component } from '@angular/core';
+import { ChildinputComponent } from '../childinput/childinput.component';
+
+@Component({
+  selector: 'app-about',
+  imports: [ChildinputComponent],
+  templateUrl: './about.component.html',
+  styleUrl: './about.component.css'
+})
+export class AboutComponent {
+  count:number=0;
+  xyz(){
+    this.count++;
+   
+
+  }
+
+}
+
+child html content:
+<h5>Child Component</h5>
+<p>the parent count value is {{mycount}}</p>
+ child ts file content:
+ import { Component,Input } from '@angular/core';
+
+@Component({
+  selector: 'app-childinput',
+  imports: [],
+  templateUrl: './childinput.component.html',
+  styleUrl: './childinput.component.css'
+})
+export class ChildinputComponent {
+  @Input() mycount!:number;
+
+}
+
