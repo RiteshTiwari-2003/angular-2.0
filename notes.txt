@@ -525,4 +525,8 @@ so advantage of services is that whenever you want to access inanother component
    2. Reactive forms 
 
    -> template forms or template driven forms :-
-   
+      template form is a simple form  
+      not used in complicated or dynamic forms 
+      so whole cod eis implemented in html file 
+      here we used ngModel as discsed  in two way data binding, ngModel is used to setup forms control
+      ngForm: we can set up our forms 
