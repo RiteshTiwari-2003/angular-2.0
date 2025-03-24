@@ -12,6 +12,7 @@ import { ChennaiComponent } from './components/contact/chennai/chennai.component
 import { PunjabComponent } from './components/contact/punjab/punjab.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
+import { TemplateformComponent } from './components/templateform/templateform.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -20,6 +21,7 @@ export const routes: Routes = [
     {path:'product',component:ProductComponent},
     {path:'posts',component:PostsComponent},
     {path:'users',component:UsersComponent},
+    {path:'tforms',component:TemplateformComponent},
     {path:'contact',component:ContactComponent, children:[
         {path:'delhi',component:DelhiComponent},
         {path:'mumbai',component:MumbaiComponent},

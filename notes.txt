@@ -517,3 +517,12 @@ constructor(private auth:AuthService){}
 this.auth.getdata();
 
 assume that in my home component i just want data from services 
+so advantage of services is that whenever you want to access inanother component also you need to create instance of like home component and access data in any component.
+
+
+#### forma validation and form handling in angular 
+   1. Template form 
+   2. Reactive forms 
+
+   -> template forms or template driven forms :-
+   
