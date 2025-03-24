@@ -500,3 +500,20 @@ export class ChildoutputComponent {
   }
 
 }
+
+
+**** Services in angular :-
+Services are classes that provided functinality across multipe components in the application , basically they are used for the reusability 
+-> they are used to handle task like data fetching from apis 
+with the help od service we can define our functionality in a file and we can use anywhere 
+-> inbuild services 
+-> custom services  to create a custom service thiscommand write :  ng g s servicename
+services are injectable 
+to access servbices in a component first we import it then create the instance of it in a constructor
+then with the help of instance we access the method of services 
+eg:
+import AuthService from '/path';
+constructor(private auth:AuthService){}
+this.auth.getdata();
+
+assume that in my home component i just want data from services 
