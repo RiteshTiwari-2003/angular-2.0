@@ -451,3 +451,52 @@ export class ChildinputComponent {
 
 }
 
+*** now we learn for child to parent like service component is parent and childoutput component is child output and we can access any daata
+from child to parent 
+parent html :
+<h2>Child to parent communication with output decorator with EventEmitter class</h2>
+<p>The child counter value is {{counter}}</p>
+<app-childoutput (myevent)="abc($event)"></app-childoutput>
+ parent ts file:
+  
+  import { Component } from '@angular/core';
+import { ChildoutputComponent } from '../childoutput/childoutput.component';
+
+@Component({
+  selector: 'app-service',
+  imports: [ChildoutputComponent],
+  templateUrl: './service.component.html',
+  styleUrl: './service.component.css'
+})
+export class ServiceComponent {
+  counter:any=0;
+  abc(data:any){
+    this.counter=data;
+  }
+
+}
+
+child html :
+<h2>child component</h2>
+<button (click)="xyz()">Counter</button>
+
+child ts file:
+
+import { Component,Output,EventEmitter } from '@angular/core';
+
+@Component({
+  selector: 'app-childoutput',
+  imports: [],
+  templateUrl: './childoutput.component.html',
+  styleUrl: './childoutput.component.css'
+})
+export class ChildoutputComponent {
+  @Output() myevent=new EventEmitter();
+  count:any=0;
+  xyz(){
+    this.count++;
+    this.myevent.emit(this.count);
+
+  }
+
+}
