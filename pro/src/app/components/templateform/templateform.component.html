@@ -2,7 +2,14 @@
 <form #myfrm="ngForm" (ngSubmit)="formSubmit()">
     <div class="form-group">
         <label >Full Name</label>
-        <input type="text" name="fullName" class="form-control" [(ngModel)]="formData.fullName" required/>
+        <input type="text" name="fullName" class="form-control" [(ngModel)]="formData.fullName" required #fn="ngModel" minlength="2"/>
+        <!-- where fn tell name of input field -->
+         <!--error-->
+         <div *ngIf="fn.invalid && (fn.touched || fn.dirty)" class="alert alert-danger">
+            <div *ngIf="fn.errors?.['required']">Full Name is required</div>
+            <div *ngIf="fn.errors?.['minlength']">Full Name minimum length is 2</div>
+
+         </div>
     </div>
     <div class="form-group">
         <label >Email</label>
