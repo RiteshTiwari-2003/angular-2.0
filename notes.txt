@@ -530,3 +530,12 @@ so advantage of services is that whenever you want to access inanother component
       so whole cod eis implemented in html file 
       here we used ngModel as discsed  in two way data binding, ngModel is used to setup forms control
       ngForm: we can set up our forms 
+
+**** mainly i have used reactive forms 
+reactive forms it is a moduler form , which have more option as compaire to the template form .they are scalable , reusable ,
+-> to use it we need to import ReactiveFormsModule
+so we have some buildin classes like in this have 
+FormGroup
+FormControl
+FormArray
+the more code is write on ts file but in template driven form we can write code in in html file

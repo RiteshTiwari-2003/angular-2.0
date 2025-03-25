@@ -13,6 +13,7 @@ import { PunjabComponent } from './components/contact/punjab/punjab.component';
 import { PostsComponent } from './components/posts/posts.component';
 import { UsersComponent } from './components/users/users.component';
 import { TemplateformComponent } from './components/templateform/templateform.component';
+import { ReactiveformComponent } from './components/reactiveform/reactiveform.component';
 
 export const routes: Routes = [
     {path:'',component:HomeComponent},
@@ -22,6 +23,7 @@ export const routes: Routes = [
     {path:'posts',component:PostsComponent},
     {path:'users',component:UsersComponent},
     {path:'tforms',component:TemplateformComponent},
+    {path:'rforms',component:ReactiveformComponent},
     {path:'contact',component:ContactComponent, children:[
         {path:'delhi',component:DelhiComponent},
         {path:'mumbai',component:MumbaiComponent},
