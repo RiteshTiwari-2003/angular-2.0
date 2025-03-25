@@ -1,1 +1,15 @@
-<p>products works!</p>
+<h2>Latest products</h2>
+<div class="row">
+    @for(prod of productData;track prod.id){
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;">
+                
+                <div class="card-body">
+                  <h5 class="card-title">{{prod.name}}</h5>
+                  <p class="card-text"> Price : Rs. {{prod.price}} <br/> Quantity : {{prod.quantity}}</p>
+                  <button class="btn btn-primary">Delete</button>
+                </div>
+              </div>
+        </div>
+    }
+</div>

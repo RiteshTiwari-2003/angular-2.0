@@ -551,3 +551,10 @@ we have  aservice ActivatedRoute with the hep of that service we can access the 
       for this json server you just need to install npm i json-server --g
 
       for thius we need to create new app using ng new crudapp
+
+      --> first create a product service 
+      ng g s services/product
+      --> create a product model(interface)
+      ng g i services/product
+
+whwenever i have done http calls services play importent role in this.
