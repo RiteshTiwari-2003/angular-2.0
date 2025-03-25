@@ -25,5 +25,19 @@ export class ProductsComponent implements OnInit {
       }
     })
   }
+  delPro(id:number){
+    if(confirm("Do you wasnt to delete?")){
+      this.prodSer.deleteProduct(id).subscribe({
+        next:(data)=>{
+          alert("Product Deleted!");
+          let pdata=this.productData.filter((prod)=>prod.id!=id);
+          this.productData=pdata;
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
+    }
+  }
 
 }
