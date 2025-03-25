@@ -2,12 +2,12 @@
 <form #myfrm="ngForm" (ngSubmit)="formSubmit()">
     <div class="form-group">
         <label >Full Name</label>
-        <input type="text" name="fullName" class="form-control" [(ngModel)]="formData.fullName" required #fn="ngModel" minlength="2"/>
+        <input type="text" name="fullName" class="form-control" [(ngModel)]="formData.fullName" required #fn="ngModel" pattern="[a-zA-z ]{2,100}"/>
         <!-- where fn tell name of input field -->
          <!--error-->
          <div *ngIf="fn.invalid && (fn.touched || fn.dirty)" class="alert alert-danger">
             <div *ngIf="fn.errors?.['required']">Full Name is required</div>
-            <div *ngIf="fn.errors?.['minlength']">Full Name minimum length is 2</div>
+            <div *ngIf="fn.errors?.['pattern']">Full Name minimum length is 2</div>
 
          </div>
     </div>
@@ -21,7 +21,12 @@
     </div>
     <div class="form-group">
         <label >Mobile</label>
-        <input type="text" name="mobile" class="form-control" [(ngModel)]="formData.mobile" required/>
+        <input type="text" name="mobile" class="form-control" [(ngModel)]="formData.mobile" required #mob="ngModel" pattern="[6-9][0-9]{9}"/>
+        <div *ngIf="mob.invalid && (mob.touched || mob.dirty)" class="alert alert-danger">
+            <div *ngIf="mob.errors?.['required']">Mobile is required</div>
+            <div *ngIf="mob.errors?.['pattern']">10 digit mobile number is allowed. start between [6-9]</div>
+
+         </div>
     </div>
     <input type="submit" value="Submit" class="btn btn-success" [disabled]="myfrm.invalid"/>
 </form>
