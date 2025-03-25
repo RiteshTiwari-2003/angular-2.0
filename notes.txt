@@ -539,3 +539,15 @@ FormGroup
 FormControl
 FormArray
 the more code is write on ts file but in template driven form we can write code in in html file
+
+** params (called as parameter): parameters send throgh urls .
+we just to define like in routing {path:'category/:cname',component:componentname}
+-> to read params in the component 
+we have  aservice ActivatedRoute with the hep of that service we can access the parameters
+
+--> crud application in angular 
+  --> apis
+      for the api we jsut use the (jsonserver: node-modules) it is a nodemodules which create REST APIS in very less period of time with the help of json file (testing)
+      for this json server you just need to install npm i json-server --g
+
+      for thius we need to create new app using ng new crudapp
