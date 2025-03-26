@@ -558,3 +558,26 @@ we have  aservice ActivatedRoute with the hep of that service we can access the 
       ng g i services/product
 
 whwenever i have done http calls services play importent role in this.
+
+*** local data storage:
+    --> cookies: store small amount of data upto 4kb
+    --> localStorage: upto 5 mbof data. it is permanent
+        in local storage how we set data 
+        -. how we set data
+        localStorage.setItem(key,value)
+        -> how we get the data
+        localStorage.getItem(key)
+        -> how we remove the data 
+        localStorage.removeItem(key)
+    --> session storage: upto 5 mb od data and it is temperary, it is applicable only hwenever your application is running 
+    -. how we set data
+        sessionStorage.setItem(key,value)
+        -> how we get the data
+        sessionStorage.getItem(key)
+        -> how we remove the data 
+        sessionStorage.removeItem(key)
+how to check localstorage in console 
+click on inspect 
+click on add button 
+click on application option
+then click on local storage

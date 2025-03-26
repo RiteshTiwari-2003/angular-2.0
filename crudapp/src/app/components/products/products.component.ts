@@ -40,5 +40,38 @@ export class ProductsComponent implements OnInit {
       })
     }
   }
+  addCart(prod:any){
+    if(localStorage.getItem('mycart')!=undefined){
+      let data:any=localStorage.getItem('mycart');
+      let arr=JSON.parse(data);
+      let status=0;
+      arr.forEach((element:any,ind:any)=>{
+        if(element.id==prod.id){
+          status=1;
+          arr[ind].items+=1;
+
+        }
+      });
+      if (status==1){
+        localStorage.setItem('mycart',JSON.stringify(arr));
+        alert("ADD cart Successfully");
+
+      }
+      else{
+        let addData={...prod,items:1};
+        arr.push(addData);
+        localStorage.setItem('mycart',JSON.stringify(arr));
+        alert("Add Cart Successfully");
+      }
+
+    }
+    else{
+      let arr=[];
+      let addData={...prod,items:1};
+      arr.push(addData);
+      localStorage.setItem('mycart',JSON.stringify(arr));
+      alert("Add Cart Successfully");
+    }
+  }
 
 }
