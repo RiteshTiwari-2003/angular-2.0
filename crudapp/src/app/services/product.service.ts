@@ -20,16 +20,16 @@ export class ProductService {
 
   }// this is my post apis
   //update
-  updateProduct(id:number,product:Product):Observable<Product>{
+  updateProduct(id:any,product:Product):Observable<Product>{
     return this.http.put<Product>(`${this.URL}/${id}`,product);
   }
   //delete
-  deleteProduct(id:number):Observable<void>{
+  deleteProduct(id:any):Observable<void>{
     return this.http.delete<void>(`${this.URL}/${id}`);
 
   }
   //get by id
-  getById(id:number):Observable<Product>{
+  getById(id:any):Observable<Product>{
     return this.http.get<Product>(`${this.URL}/${id}`);
   }
 
