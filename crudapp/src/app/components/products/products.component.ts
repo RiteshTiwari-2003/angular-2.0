@@ -55,16 +55,18 @@ export class ProductsComponent implements OnInit {
       });
       if (status==1){
         localStorage.setItem('mycart',JSON.stringify(arr));
+        this.prodSer.addCardSubject(arr);
         alert("ADD cart Successfully");
-        window.location.reload();
+        // window.location.reload();
 
       }
       else{
         let addData={...prod,items:1};
         arr.push(addData);
         localStorage.setItem('mycart',JSON.stringify(arr));
+        this.prodSer.addCardSubject(arr);
         alert("Add Cart Successfully");
-        window.location.reload();
+        // window.location.reload();
       }
 
     }
@@ -73,8 +75,9 @@ export class ProductsComponent implements OnInit {
       let addData={...prod,items:1};
       arr.push(addData);
       localStorage.setItem('mycart',JSON.stringify(arr));
+      this.prodSer.addCardSubject(arr);
       alert("Add Cart Successfully");
-      window.location.reload();
+      // window.location.reload();
     }
   }
 

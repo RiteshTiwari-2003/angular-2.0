@@ -1,13 +1,26 @@
 import { Injectable,inject } from '@angular/core';
 import { Product } from './product';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable,Subject,BehaviorSubject } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
 export class ProductService {
   http=inject(HttpClient);
+  subject$:any;
   private URL="http://localhost:3000/products";// JSON server url 
+  constructor(){
+    if(typeof window!=='undefined' && 'localStorage' in window){
+      let localData=window.localStorage.getItem('mycart');
+      this.subject$=new BehaviorSubject(localData!=undefined?JSON.parse(localData):[]);
+
+    }
+
+  }
+  //add data in subject
+  addCardSubject(data:any){
+    this.subject$.next(data);
+  }
   //get all products
   getAll():Observable<Product[]>{// so what happen whenever we call any od the data any of the api , it will give you the particuler thing in a observable format so that we can subscribe it
     // it is the part of RxJS library

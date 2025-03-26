@@ -588,3 +588,43 @@ ng g p pipename
     .ts 
     @Pipe decorator - pipename , and the method that pipe transform 
     pipetransform method in interface to define logic of custome pipes
+
+whenever we consume the api with the help of HttpClient as  i told you that that particuler service return the response in observable format 
+so what is that observable and all? so there all are the part of RxJS , that is concept in angular that is a library which angular uses and all 
+there is some theoritcal concept 
+RxJS library in angular :it is poerfull programming language for reactive programming in angular development ,
+it uses observable that makes it easy to compose asynchronous or event based program by providing a set of powerful operator 
+angular used this library for dealing event , stream of data , and asynchronous operations 
+RxJS build on top of concept of observable , which are sequence of value that can be emmitted over time,and observe , which can subscribe to these observable 
+to receive notification of new values.
+-> observable: define multiple values.
+-> observers:subscribe the observable values.
+eg: HttpClient Module return observable  when making http request .
+when an observer subscribe to an observable , the observable begins to emit values and observer callback are called with these values 
+the observer also can unsubscribe from the observable to stop reseaving values .
+
+-> RxJS provide a wide range of operators to filter the observer data:
+-> Map: transform the value before subscribe 
+-> filter : filter the value before subscribe
+-> merge : combine multiple observable into single.
+
+
+-> RxJS Subject; it is a spacial type of observable that is designed to implement asynchronous, event based programming 
+by using observable sequence.
+-> subjects are multicast(support multiple subscription)
+-> subjects are use for the state management (we can put data in an subject and we can access anywhere in the application )
+-> we can emit the value using next() method
+-> does not have an initial value so subscriber onlly receives value emmitted after they subscribe
+what happen whenever we on add to cart , we jsut refrah the page but as per the single page application , whenever i click on add to cart it automatically
+updated , so we just need to manage the state without refreshing the page so with the help of RxJS subject we can actually achive it  
+
+in javascript we basically uses promise and other thing for handling asynchronous programming but in angular we use RxJS observable 
+
+so in interview this question asked by interviewer that what is the differnce between observable and promise?
+the main differnce in promise and observable is that observable return multiple value but promise return only single value at a time, 
+observable are cancelable in some time , but promises are not cancelable either it is resolved or rejected you can not cancel it 
+these are some advantage of observable through the promise part 
+in promise for consuming the vaue we use then but here in observable for consumin or for observe thing we use subscribe 
+
+in observable we have multiple operator to filter our data but in promise , if we cant.
+assume observable return multiple value before subscribe you can filter it using map filter or merge so the appropiate data we can subscribe 
