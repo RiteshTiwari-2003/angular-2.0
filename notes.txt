@@ -581,3 +581,10 @@ click on inspect
 click on add button 
 click on application option
 then click on local storage
+
+
+custom pipes (create your own pipes):
+ng g p pipename
+    .ts 
+    @Pipe decorator - pipename , and the method that pipe transform 
+    pipetransform method in interface to define logic of custome pipes

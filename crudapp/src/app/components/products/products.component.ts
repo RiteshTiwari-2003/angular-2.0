@@ -2,10 +2,11 @@ import { Component ,OnInit} from '@angular/core';
 import { ProductService } from '../../services/product.service';
 import { Product } from '../../services/product';
 import { RouterLink } from '@angular/router';
+import { LimittoPipe } from '../../pipes/limitto.pipe';
 
 @Component({
   selector: 'app-products',
-  imports: [RouterLink],
+  imports: [RouterLink,LimittoPipe],
   templateUrl: './products.component.html',
   styleUrl: './products.component.css'
 })
