@@ -55,6 +55,7 @@ export class ProductsComponent implements OnInit {
       if (status==1){
         localStorage.setItem('mycart',JSON.stringify(arr));
         alert("ADD cart Successfully");
+        window.location.reload();
 
       }
       else{
@@ -62,6 +63,7 @@ export class ProductsComponent implements OnInit {
         arr.push(addData);
         localStorage.setItem('mycart',JSON.stringify(arr));
         alert("Add Cart Successfully");
+        window.location.reload();
       }
 
     }
@@ -71,6 +73,7 @@ export class ProductsComponent implements OnInit {
       arr.push(addData);
       localStorage.setItem('mycart',JSON.stringify(arr));
       alert("Add Cart Successfully");
+      window.location.reload();
     }
   }
 
