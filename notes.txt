@@ -674,3 +674,36 @@ export const routes: Routes = [
 --> How we build angular applications for production
 we have a command ng build 
 
+Subject and BehaviouralSubject are both same , so the basically they are used for the state management whwenever we want have a data and we can access the data anywhere 
+in our application and all so only the difference between these two is that they are the observabe and we can get the data with the help of subscribe as same wayonly different is that in Subject we can not initializea initial value
+thats why the reason i want to use BehaviourSubject because i want to get the localStorage data in our subject part by default , thats why i use behavioursubject.
+
+
+so question is what is the localStorage
+localStorage is a web storage api in javascript that allow you to store in key value pair persistently in a user browser , 
+the stored data does not expire and remain available even after the user closes and reopen the browser.
+
+key feature of localStorage:
+persistent storage:
+data stays until explicitly removed 
+stores data as a string: even if you store object they are converted to string.
+5 mb limit: each origin (domain) gets around 5 mb storage 
+synchronous api: reading/writting blocks the main thread
+common method; save data :
+localStorage.setitem("username","ritesh")
+retrieve data:
+let user=localStorage.getitem("username")
+console.log(user);//ritesh
+
+3. remove specific data:
+localStorage.removeItem("username");
+4. clear all data:
+localStorage.clear();
+
+----> storing objects:
+since localStorage only store strings, you need to covert objects using JSON.stringify() and retrive them using JSON.parse()
+let user ={name:"Ritesh",role:"Developer"};
+localStorage.setItem("user",JSON.stringify(user));
+let retriveusers=JSON.parse(localStorage.getItem("user"));
+
+console.log(retriveusers.name);
