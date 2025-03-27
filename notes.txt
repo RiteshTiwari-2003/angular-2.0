@@ -653,4 +653,24 @@ types of gaurd:
   so the performance of application is fast and all 
   before angular 16 and all we have a load children concept we have module approach and all to achive it 
   but in angular 18 
-  
+  like app.route.ts:
+//import { ProductsComponent } from './components/products/products.component';
+import { Routes } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+//import { AddproductsComponent } from './components/addproducts/addproducts.component';
+//import { EditproductComponent } from './components/editproduct/editproduct.component';
+import { authGuard } from './gaurds/auth.guard';
+import { leaveGuard } from './gaurds/leave.guard';
+
+export const routes: Routes = [
+    {path:'',component:HomeComponent},
+    //{path:'products',component:ProductsComponent},
+    {path:'products',loadComponent:()=>import("./components/products/products.component").then((m)=>m.ProductsComponent)},//iit return in a promise sowe use then () method
+    {path:'addproduct',loadComponent:()=>import("./components/addproducts/addproducts.component").then((m)=>m.AddproductsComponent),canActivate:[authGuard],canDeactivate:[leaveGuard]},
+    {path:"editpro/:id",loadComponent:()=>import("./components/editproduct/editproduct.component").then((m)=>m.EditproductComponent)},
+];
+
+
+--> How we build angular applications for production
+we have a command ng build 
+
