@@ -45,6 +45,9 @@ export class ProductService {
   getById(id:any):Observable<Product>{
     return this.http.get<Product>(`${this.URL}/${id}`);
   }
+  isLoggedIn(){
+    return true;
+  }
 
   
 }

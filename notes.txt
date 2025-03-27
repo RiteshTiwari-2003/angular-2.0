@@ -628,3 +628,19 @@ in promise for consuming the vaue we use then but here in observable for consumi
 
 in observable we have multiple operator to filter our data but in promise , if we cant.
 assume observable return multiple value before subscribe you can filter it using map filter or merge so the appropiate data we can subscribe 
+
+
+**** Gaurds in angular:
+the role of the gaurds to protect our routes 
+means onlt the autherized person can visit that routes .
+they are interface that allow us to control navigation within the application.
+basically gaurd is the power part of anguler route module
+types of gaurd:
+  CanActivate: we commaly used that one wheter can route activate 
+  CanActivateChild: for the child route
+  CanDeactivate: when user leave a route like when you are submitting a form a leave without submitting it then a pop up is coming that can you away from this page.
+
+  Resolve : prefetches the data before navigating to the route 
+  CanLoad: lazy loading or (on demand loading)
+
+  creating a gaurd using ng g g gaurdname
