@@ -34,5 +34,14 @@ export class AddproductsComponent {
     })
 
   }
+  canExit():boolean{
+    if(confirm("Do you want to leave it before save")){
+      return true;
+
+    }
+    else{
+      return false;
+    }
+  }
 
 }

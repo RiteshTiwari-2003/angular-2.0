@@ -644,3 +644,13 @@ types of gaurd:
   CanLoad: lazy loading or (on demand loading)
 
   creating a gaurd using ng g g gaurdname
+
+  lazyoading on demand loading:
+  whenever we have requirement only that time this is load
+  like in app.proute.ts whenever my application is executed this all the component are loaded wich present in app.route.ts 
+  it is ok that home component is default component whenever my applicatio is executed the home component is loaded but what about product , add and edt this 
+  these compoennt are only load when user click on product then at that time it is load 
+  so the performance of application is fast and all 
+  before angular 16 and all we have a load children concept we have module approach and all to achive it 
+  but in angular 18 
+  
