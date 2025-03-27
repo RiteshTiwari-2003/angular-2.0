@@ -677,7 +677,7 @@ we have a command ng build
 Subject and BehaviouralSubject are both same , so the basically they are used for the state management whwenever we want have a data and we can access the data anywhere 
 in our application and all so only the difference between these two is that they are the observabe and we can get the data with the help of subscribe as same wayonly different is that in Subject we can not initializea initial value
 thats why the reason i want to use BehaviourSubject because i want to get the localStorage data in our subject part by default , thats why i use behavioursubject.
-
+if you peform change in your local then again build using ng build and perform againg and agian thing in server
 
 so question is what is the localStorage
 localStorage is a web storage api in javascript that allow you to store in key value pair persistently in a user browser , 
