@@ -707,3 +707,75 @@ localStorage.setItem("user",JSON.stringify(user));
 let retriveusers=JSON.parse(localStorage.getItem("user"));
 
 console.log(retriveusers.name);
+
+what is the difference between readonly and disabled 
+1. read only attribute:
+applies onlyon input and textarea elements 
+user can not modify the field but can select and copy the text.
+the feilds value is submitted with the form 
+
+2. disabled attribute :
+appies to all form element (input , textarea, select, button, etc)
+user can not modify , select and focus the field 
+the dields value is not submitted with the form 
+
+in form one attribute is action attribute it tell us then if form is submitted then what action you want to perform 
+so suppose that if user click on submit then user want to move on next page 
+action define the action to be performed when the form is submitted and i f the action attribute is omitted ,
+the action is set to the current page .
+
+method :
+method specifies the http method(get and post) to be used when submitting the form data 
+
+target ;
+specify if the submitting result will open in a new browser or in current window 
+
+method type in html form "
+get and post :  1. get: sends form data as url parameter 
+data is visible in the url , making it less secure 
+limited data size 
+canbe bookmarked and cached 
+suitable for retrieving data 
+
+2. post method;
+send form data in request body not in url,
+more secure for sensitive data 
+no size limitition on data.
+can not be bookmarked and cached .
+suitable for storing , updating and deleting data .
+
+html form input type 
+color: used for input field , that should contain a color.
+date: used for input field that should contain a date.
+datetime-local: specifies a date and time input field, with no time zone.
+time; allow the use to select a time (with no time zone)
+week: allow the user to select week and year .
+month : allow the user to select a month and year 
+email : usef for input field that should contain an email address.
+number ;: define a numeric input field 
+range ; defining a control over for entwering a number whose exact value is not importent 
+, default range is 0 to 100, however you can set restriction on what number are accepted with the min, max and step attribute 
+for uploading any file we use file type input <input type="file" /> if you want to upload more than one file together then use multiple attribut elike this 
+<input type="file" multipe/>
+
+what is the fifferent between select and datalist in html form 
+select functionality: select provide a drop down menu with predefined option 
+datalist functionality: datalist provide a list of suggested option while allowing user to enter custom input
+
+user input in select; users can select only from given options 
+but in datalist : user can select from suggestions and or enter a different value 
+
+tag uses in select:
+uses option tag inside select tag
+in datalist uses option tag inside datalist but linked witha input tag that datalist.
+
+apperance :
+select aways appear as a dropdown menu.
+datalist : appear as input field with auto suggested when typing 
+
+css 3 flex box 
+the flex container properties are :
+flex-direction: row| row-reverse|column|column-reverse
+flex-wrap: wrap|no-wrap|wrap-reverse
+flex-flow: combination of flex-direction and flex-wrap 
+justify-content: flex-start,flex-end,center,space-around,space-between
