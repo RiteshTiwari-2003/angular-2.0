@@ -779,3 +779,140 @@ flex-direction: row| row-reverse|column|column-reverse
 flex-wrap: wrap|no-wrap|wrap-reverse
 flex-flow: combination of flex-direction and flex-wrap 
 justify-content: flex-start,flex-end,center,space-around,space-between
+
+transition in css3 :
+css3 transition allow you to change the property values smoothly , over a given duration 
+transition sub properties:
+transition
+transition-property
+transition-delay
+transition-duration
+transition-timing-function 
+transition-delay: means after how much duration transition will start.
+transition-property: means on which property you want to apply transition effect.
+transition-timing-function: how the transition happen
+<html>
+<head>
+<style>
+div{
+   width:20%;
+   height:20%;
+   border:splid;
+   background-color:black;
+   transition-property:width;
+   transition-duration:2s;
+
+}
+div:hover{
+   width:50%;
+
+}
+</style>
+</head>
+<body>
+</body>
+</html>
+
+css transformation:
+css transformation allow you to move rotate, scal and skew elements, with the css transformation
+property you can use the following 2d tranformation methods:
+translate(200px,300px)
+translateX(200px)
+translateY(200px)
+rotate(180deg)
+scaleX(3)
+scaleY(3)
+scale(3,.05)
+skewX(180deg)
+skewY(180deg)
+
+<style>
+div{
+   width:20%;
+   height:80%;
+   border:solid;
+   background-color:azure;
+   position:relative;
+   transition:top left;
+   transition-duration:4s;
+}
+div:hover[
+   transform:translate(200px,300px);
+]
+</style>
+
+css animation:
+css allow animation of html elements without javascript or flash!
+@keyframes
+animation-name
+animation-duration
+animation-delay
+animation-iteration-count
+animation-direction
+animation-timing-function
+animation
+<style>
+div{
+   width:100px;
+   height:100px;
+   background-color:red;
+   position:relative;
+   animation-name:example;
+   animation-duration:4s;
+}
+@keyframes example{
+   0% {background-color:red; left:0px;top:0px;}
+   25% {background-color:yellow;left:200px;top:0px;}
+   50% {background-color:blue;left:200px;top:200px;}
+   75% {background-color:green;left:0px;top:200px;}
+   100% {background-color:red; left:0px;top:0px;}
+}
+</style>
+
+events in javascript
+events are action or occurance that happen in the system you are programming ,
+which the system tells you about so you can respond to them in in some way if desired.
+for example if user click on the button on a webpage , you might want to respond to tht action by displaying an information box 
+below table consist type of event :
+mouse event :
+onclick
+ondbclick
+onmouseenter
+onmouseleave 
+keybord events:
+onkeypress
+onkeydown
+onkeyup
+
+form event :
+onsubmit
+OnChange
+onfocus 
+onblur
+
+document /window event:
+onload
+onunload
+onscroll
+
+event handler
+each available event has an event handler , which is block of code (usually a user defined javascript function) that willbe run when the event fire .
+when such a block of code is defined to be run in response to an event firing , we say we are registering an event handler
+event handler sometimes called as event listner.
+<input type="button" onClick="myFunction()" value="try it"/>
+<script>
+function myFunction(){
+   alert("Hello World!");
+}
+</script>
+
+DOM in javascript
+the document object model is a cross platform and language independent application programming interface that treats an html document as a tree 
+structure wherein each node is an object representing a part of document , the dom represent document with logica tree
+
+dom methods:
+1. document.getElementById() : returns an element with an given id attribute value.
+2. document.getElementsByTagName():returns an array containing all the elements on the page of given type or tag.
+3. document.getElementsByClassName(): returns an array containing all the elements on the page of given class
+4. document.querySelector(): returns the very first matching element as per the selector.
+5. document.querySelectorAll(): returns the all matching element as per the selector.
