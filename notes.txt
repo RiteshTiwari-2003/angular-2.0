@@ -916,3 +916,78 @@ dom methods:
 3. document.getElementsByClassName(): returns an array containing all the elements on the page of given class
 4. document.querySelector(): returns the very first matching element as per the selector.
 5. document.querySelectorAll(): returns the all matching element as per the selector.
+
+polymorphism:
+polymorphismmeans one thing in many form 
+it can be achived by 
+two thing ; method overloading  , method overriding 
+method oberloading is that when same method define in same class multiple time but with the differnet of parameter.
+polymorphism 
+polymorphism is one thing in many form and it is achived by method overriding
+method overriding is that a same method is defined in super calss as weel as subclass 
+lets check how to implement polymorphism 
+
+
+what is abstraction?
+data abstraction is the property by virtue of which only essential detais are displayed to the users.
+abstraction is achived by interfaces 
+interfaces are declared using the interface keyword and may only contain method signature and variable declaration .
+an interface is an abstract type that is used to specify a behaviour that classes must implement .
+they are similer to protocals 
+interface can not be instantiated but rather are implemented.
+
+interface person{
+   fname:string;
+   lname:string;
+   sayHi:()=>string;
+
+}
+data abstraction is the property of virtue of which only the essential details are displayed to the user .
+interfaces and class
+classes
+define a new type
+properties(with implementation)
+method(with implementation)
+can be instantiated 
+
+
+interface 
+define a new type
+properties (signature )
+method(signature)
+can not be intansitated 
+
+encapsulation vs abstraction
+encapsulation is data hiding (information hiding ) while abstraction is detail hiding (implementation hiding)
+while encapsulation groups together data and methods that act upon the data ,
+data abstraction deals with exposing the interface and hiding the details of implemnentation .
+
+what is the destructuring ?
+destructuring assignment syntex is a javascript expression that makes it possible unpack values from array, properties from object into distinct variable 
+var arr=[30,40,60]
+var a=arr[0]
+var b=arr[1];
+
+what is the array destructuring ?
+var a,b;
+[a,b]=[10,20];
+console.log(a);
+console.log(b);
+var arr=[10,20,30]
+var [a,b,c]=[10,20,30];
+console.log(a)
+onsole.log(b)
+console.log(c)
+
+what is object destructuring ?
+var o={p:42,q:true};
+var{p,q}=o;
+console.log(p);
+console.log(q);
+var obj={firstName:"Ritesh",lastname:"Tiwari"};
+var {firstName:p,lastname:q}=obj;
+console.log(p)//"ritesh"
+or you can also write 
+var {firstName,lastname}=obj;
+console.oog(firstName);
+
