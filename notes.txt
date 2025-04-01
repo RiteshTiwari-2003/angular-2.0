@@ -1057,3 +1057,56 @@ set.has("Apple");
 set.delete("APple");
 set.size
 set.clear();
+
+what are module?
+so module is nothing but it is piece of javascripot code which contains varibale declaration , function declaration , class declaration ,e tc and 
+by default these declaration have local in module 
+what is export and import in module ?
+the export statement is used when creating javascript module to export classes , functions , and object and primitive values from the module 
+so they can be used by other program using import keyword 
+a modue can import things from other modules using module specifiers :
+relative paths 
+absolute paths 
+modules are singleton , even if a module imported multiple time only its single instance is exist .
+what is multiple names export and import 
+
+//lib.js
+export const sqre=Math.sqrt;
+export function square(){
+   return x*x;
+}
+export function diag(x,y){
+   return sqrt(square(x)+ square(y));}
+export class employees{
+
+   }
+main.js
+import {square,diag,employees} from "lib";
+console.log(square(11));
+console.log(diag(4,3));
+
+//you can also import the complete module
+//main.js
+import * as lib from "lib";
+console.log(lib.square(11));
+console.log(lib.diag(4,3));
+
+// what is single default export and import 
+
+//myFunc.js
+export default function (){
+
+}// no semicolumn
+//main1.js
+import myFunc from "myFunc";
+myFunc();
+or a class;
+//MyClass.js
+export default class{
+
+}
+//main2.js
+import MyClass from "MyClass";
+const int=new MyClass();
+
+in one module we can only put one default keyword thing 
