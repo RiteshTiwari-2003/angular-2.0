@@ -990,4 +990,70 @@ console.log(p)//"ritesh"
 or you can also write 
 var {firstName,lastname}=obj;
 console.oog(firstName);
+var array=[5,2,3];
+for(let i in array){
+   console.log(i);
+}// 0, 1 , 2
+for(let i in array){
+   console.log(typeof(i));
+}
+output of this should come 
+string
+string
+string
+let array=[10,20,30];
+for(var val of array){
+   console.log(value);
+}// 10, 20 , 30
 
+for (var val of array)[
+   console.log(typeof(val));
+]// number, number, number
+
+Map 
+we can create a Map using new keyword 
+var map=new Map();
+let map=new Map();
+map.set('A',1);
+map.set('B',2);
+map.set('C',3);
+
+the set method is also chainable 
+var map=new Map().set('A',1).set('B',2);
+
+or we can inititaliza map an array of key value pair
+let map=new Map([['A',1],['B',2],['C',3]]);
+var map=new Map();
+map .set(101,"John").set(102,"zRitesh").set(103,"Rohandeep");
+
+map methods ;
+we can extract the value using get method()
+map.get("A");
+we can also check that particuler key are present or not using has method
+map.has("A"); //true
+we can also delete the key using delete method
+map.delete("A");
+we can check also size of map using size property
+map.size
+also you canuse clear method to clear all the thing 
+map.clear();
+for (var key of map.keys()){
+   console.log(key);
+}
+for(var value of map.values()){
+   console.log(value);
+}
+for(var entry of map.entries()){
+   console.log(entry);
+}
+Sets are build like map but they only store key not key value pair 
+sets are only store unique value, so adding a value a second time has no effect .
+var set=new Set();
+set.add('Apple');
+set.add('Orange');
+set.add('Banana');
+set methods 
+set.has("Apple");
+set.delete("APple");
+set.size
+set.clear();
