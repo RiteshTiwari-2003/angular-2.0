@@ -1143,3 +1143,54 @@ bootstrap: the root component that angular create and insert into index.html hos
 the default application created by anguler cli only has one component AppComponent, so it is in both the declaration and bootstrap array.
 so in app.module.ts in bootstrap AppComponent and in app.component.ts in selector have app-root which is describe in index.html page as tag 
 <app-root></app-root>
+
+#### data binding 
+data binding is the process that create a connection between the application's ui and the data .
+means which create connection between the template  which is view and the logic where we write the data , hwere you are having data .
+when the data changes its value, the ui element which are bound to the data also change similerly vice versa 
+angular handles data binding by synchronizing the state of the view with the data in the component.
+data binding can be one way, where a chnage in the state effect the view or two way where a change from the view can also change the model.
+so two way data binding means both side like change in in model affect view and change in view affect model 
+
+so i have component class and component template , if any changes happen in class data it also affect template and if any change happen in template
+it shoud reflect the class 
+if any change happen in the class it should reflect the template this side is known as property binding 
+and if any change happen in template it reflect the class this is known as event binding 
+so the property binding and event binding is one way data binding but all together known as two way data binding 
+
+types of data binding 
+1. interpolation 
+2. property binding 
+3. event binding 
+4. two way databinding 
+
+attribute and property 
+attribute belong to html element property belongs to dom 
+attribute initialize the DOM property then they are done .
+attribute once initialize can not be changed but the property can be changed 
+
+interpolation 
+interpolation is technique that allows the user to bind the value to a ui element .
+means bind the value from the component to the ui, so it is technique of also one way data binding 
+interpolation binds the data one way this means that when the vsalue of the field bound using interpolation change , it is updated as well in in the page
+means whenever data change in compoennt it automatically updated in the view .
+<input type="text" value={{name}}/>
+
+like in user.component.ts in templateUrl we also write template  like this :
+template: '<input type="text" value="intellipaat"/>'  but when you write multiple line html code then you must use backteack(`)
+similer at the place of styleUrl we can use styles:['h1 {color:blue}'] 
+now in same file in user.component.ts in in UserComponent write some variable 
+name:string="Intellipaat";
+now update 
+template:`<input type="text" value={{name}}/>
+<h1>ritesh tiwari</h1>
+<p> iam ritesh tiwari</p>`,
+
+so basically in interpolation taking the data from component class and puting the data in template by using curly braces is called as interpolation .
+now in class UserComponent add a method also like 
+getName():string{
+   return this.name;
+}
+and simply write in user.compoennt.ts  in template:`<input type="text" value={{getname()}}/>`
+so interpollation means getting data from the modeland putting into template.
+
