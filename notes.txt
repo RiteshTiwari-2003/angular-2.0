@@ -1110,3 +1110,22 @@ import MyClass from "MyClass";
 const int=new MyClass();
 
 in one module we can only put one default keyword thing 
+## anguler cli (command line prompt)
+angular cli makes it easy to start with any angular project 
+angular cli comes with command that help us to create and start our project very fast
+it create project generate application and library code and perform a variety of ongoing development tasks such as testing , building and development .
+so what is step 
+so first start angular cli in your project compter
+npm install @anguler/cli -g
+step 2
+create a workspac3ee and initial application 
+ng new my-app
+step 3
+serve the application 
+cd my-app
+ng serve --o
+
+##### Bootstraping 
+an ngmodule describe how the application parts fit together , every appication atleast one angular module , the root module that you bootstrap 
+to launch the application , by convention , it is usually called as AppModule. 
+
