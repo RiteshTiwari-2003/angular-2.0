@@ -1194,3 +1194,28 @@ getName():string{
 and simply write in user.compoennt.ts  in template:`<input type="text" value={{getname()}}/>`
 so interpollation means getting data from the modeland putting into template.
 
+property binding
+property binding bind the value to the dom properties of the html element 
+it send the component from component clasd to view .
+property binding are evaluated on every browxser event and any change made to the object in the event , are applied to the properties 
+<p><img [src]="heroImageUrl"> is the <i> property bound</i> image.</p>
+
+like in user.component.ts in tempplate : `<input type="text" [value]=getName()/>`
+or this thing also same as above line 
+`<input type="text" bind-value=getName()/>`
+
+so question is why use property binding at the place of interpolation when work are same 
+so there is difference when i use diasabled attribute 
+like 
+ tempplate : `<input type="text" value={{getName()}} disabled={{isDisabled}}/>`
+ and in user.component.ts in UserComponent class 
+ use this line like 
+ isDisabled:boolean=false;
+ but in interpolation it is not working 
+ i do the same thing with property binding , 
+ tempplate : `<input type="text" [value]=getName() [disabled]="isDisabled"/>` when we use a variable in property binding then put double quotes when use method not put double 
+ quotes.
+ interpolation working very well untill your data type is string but when data type other than string like boolean then it not work properly.
+ when rendering data value as string then use interpolation , interpolation is convinient option as it increase readability 
+ when a setting a element property to a non string data type , then you must use property instead of interpolation.
+ 
