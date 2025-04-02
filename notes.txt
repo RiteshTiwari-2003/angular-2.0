@@ -1129,3 +1129,17 @@ ng serve --o
 an ngmodule describe how the application parts fit together , every appication atleast one angular module , the root module that you bootstrap 
 to launch the application , by convention , it is usually called as AppModule. 
 
+what is the NgModule?
+an NgModule is the class marked by the @NgModule decorator .
+@NgModule take a metadata object that that describe how to compile the component's template , and how to create a injector at runtime .
+it define the module 's own component , directive and pipes making some og them public through the export property so that external component use them .
+@NgModule can also add service provider to the application dependency injector 
+
+the @NgModule decorator identifies AppModule as NgModule class ,@ngModule takes a metadata object that tell aguler how to compile and launch the application 
+declaration : this application's lone component.
+import : import BrowserModule to have browser specific service such as dom rendering , sanitization , and location .
+providers: service providers .
+bootstrap: the root component that angular create and insert into index.html host web page 
+the default application created by anguler cli only has one component AppComponent, so it is in both the declaration and bootstrap array.
+so in app.module.ts in bootstrap AppComponent and in app.component.ts in selector have app-root which is describe in index.html page as tag 
+<app-root></app-root>
