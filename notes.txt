@@ -1324,3 +1324,13 @@ Employee name:<input type="text" #txt1 [value]=employees.name [(ngModel)]=employ
 
  like when in view in this two way data binding part input box when i change name then automatically other three section name input box also changes 
  and like if i changes salary in this then other three 's salery also changes 
+
+ component interaction
+
+ how to interact a parent component with child component and how a child component with parent component 
+ when i want to pass props from parent to child i use @Input decorator and when i want to pass props from child to parent then pass using @Output decorator
+ like but how to i know that which is parent and which is child 
+ like in parent.component.html when i write selector of other component then that component called parent component and in parent component when 
+ i use which component selector that component called as child component .
+
+ 
