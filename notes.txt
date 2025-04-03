@@ -1333,5 +1333,69 @@ Employee name:<input type="text" #txt1 [value]=employees.name [(ngModel)]=employ
  like in parent.component.html when i write selector of other component then that component called parent component and in parent component when 
  i use which component selector that component called as child component .
   
+in project i create two more component parent and child 
+ng g c parent , and ng g c child 
+in parent.component.ts in templateUrl i write template : `<h1> This is parent page</h1>
+<app-child></app-child>`,
+in app.component.html 
+this is app component 
+<app-parent></app-parent>
 
+i also child.component.ts i use template at the pllace of templaeUrl 
+template: `<h2>This is child Component</h2>`,
+now in parent.component.ts in ParentComponennt class i write some variable 
+message1:string="hey child!';
+<app-child [parentData]=message1></app-child>
 
+and inside ChildComponent class in child.component.ts i use @Input decorator
+@input() parentData:string;
+and also import Input in child.component.ts 
+import {Component,OnInit,Input} from '@angular/core';
+
+and in child.component.ts in template : `<h2> this is child component</h2>
+sent by parent {{parentData}}`,
+
+or you can also update child.component.ts like this that in ChildComponent class 
+@Input('parentData') childmessage:string;
+
+and template:`<h2> this is child clas</h2>
+sent by the parent {{childmessage}}`,
+
+in parent component you can pass multiple attribute using property binding to the child component 
+<app-child [parentData]=message1 [parentData2]=meassage2></app-child>
+and in ParentComponent class write one more variable  message2:string="You are greeting good";
+
+and in child.component.ts in ChildComponent class we modify cod elike this 
+@Input('parentData') childmessage:string;
+@Input('parentData2') childMsg2:strig;
+and in child.component.ts in template add this template : `<h2> This is child component</h2>
+Sent by parent {{childmessage}} {{childMsg2}} `,
+
+then similary if child want to send the props to parent using @Output decorator 
+in child.component.ts impport Output and in ChildComponent cllass add this line 
+@Output() childData=new EventEmitter();// and also import EventEmitter
+
+in child.component.ts in template add this : template:`<h2> this is a child component</h2>
+sent by {{childmessage}} {{childMsg2}}
+<input type="button" (click)="sendMsg()" value="send message"/>`,
+
+in ChildComponent class add sentMsg(){
+   this.childData.emit("Hey parent");
+}
+
+in parent.component.ts 
+in template 
+<app-child [parentData]=message1 [parentData2]=meassage2 (childData)="checkMsg($event)"></app-child>
+and in ParentComponent class 
+checkMsg(val){
+   console.log(val);
+}
+and also message3:string;
+and 
+checkMsg(val){
+   this.message3=val;
+   console.log(val);
+}
+template:
+<app-child [parentData]=message1 [parentData2]=meassage2 (childData)="checkMsg($event)" ></app-child>
+{{message3}}
