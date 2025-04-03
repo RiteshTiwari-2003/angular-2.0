@@ -1219,3 +1219,108 @@ like
  when rendering data value as string then use interpolation , interpolation is convinient option as it increase readability 
  when a setting a element property to a non string data type , then you must use property instead of interpolation.
  
+ event binding : event binding nothing but a one way data binding 
+ what is an event : a user expects a ui respond to her/his action on the page  , every such action would trigger an event on the page 
+ and the page has to respond by listning that event 
+
+ what is event binding 
+ the event binding system provide us the way to attach a method to defined ina component with an event .
+ <button class="btn" (click)="submit()">Submit</button>
+ <button class="btn" on-click="submit()">Submit</button>
+
+ here the method subit has to be defined in the component class, any dom event can be either prefixed with on- or can be enclosed 
+ inside parenthesis to bind it with a method in component  class .
+ multiple type of event 
+ (scroll)="scrollCallback()"
+ (mouseenter)="mouseenterCallback()"
+ (cut)="cutCallback()"
+ (mousedown)="mousedownCallback()"
+ (copy)="copyCallback()"
+ (mouseup)="mouseupCallback()"
+ (paste)="pasteCallback()"
+ (click)="clickCallback()"
+ (keydown)="keydownCallback()"
+ (dblclick)="dblclickCallback()"
+ (keypress)="keypressCallback()"
+ (dragover)="dragovercallback()"
+ (keyup)="keyupCallback()"
+ (drop)="dropCallback()"
+
+ now in user.component.ts
+ template:`<input type="text" value={{getName()}} disabled={{isDisabled}}>
+ <input type="text" [value]=getName() [disabled]="isDisabled">
+ <input type="text" bind-value=getName()>
+ <h1> Inline Template</h1>
+ <input type="button" (click)="cllMe($event)" value="click me">
+ <h1>Test</h1>`,
+ now the method callMe() define in the component class UserComponent
+ test:string;
+ callMe(event):void{
+   this.event="button is clicked";
+   console.log(event);
+ }
+
+ two way databinding:
+ the feature two way data binding derived from the property and event binding , nothing but the combination of the both actually
+ the property binding and event biding are directed one way with the former receiving data into view from the component object 
+ and letter sending data from view to component .
+ the two way databinding is a combination of both property and event binding it gets the data from the component object to the view and set the data 
+ from view to component object.
+ like i have component and dom so [(ngModel)]='property' go from component to dom 
+
+ the following snippet shows an example of directive , ngModel to show how two way data binding can be used :
+ <input type='text' [(ngModel)]="name"/>
+ <div> {{name}}</div>   this name is come fro  the component class .
+
+ now check how to perform two way data binding in angular component
+ user.component.ts
+ template:`<input type="text" [(ngModel)]="name"/>
+ <p>{{name}}</p>`,
+
+ but error come in above code run because i have not imported FormsModule in app.module.ts 
+ import {FormsModule} from '@angular/forms';
+
+ and also added in app.module.ts in import 
+ FormsModule
+
+ add a component employees in project by using this command ng g c employees 
+ and also check app.module.ts that new component updated <app-employees></app-employees>
+
+ in emplyee.component.ts 
+ in EmplyeesComponent calss write this 
+ employees:any={
+   name:"John Smith",
+   salary:40000,
+   empId:101
+ }
+ so now i want  to access this object in employees template like employees.component.html 
+ so which type of binding is this this is property binding or interpolation
+ interpolation (one way data binding from model/component to view) 
+ Employee name:<input type="text" value={{employees.name}}/>
+ Employee Salery:<input type="text" value={{employees.salary}}/>
+ Employee ID:<input type="text" value={{employees.empid}}/>
+
+ prioperty binding (one way databinding from component to view )
+ Employee name:<input type="text" [value]=employees.name/>
+ Employee Salery:<input type="text" [value]=employees.salary/>
+ Employee ID:<input type="text" [value]=employees.empid/>
+
+event binding (it is aso one way data binding but in opposite flow as comapre to property AND interpolation like take the data from view and change in component)
+Employee name:<input type="text" #txt1 [value]=employees.name (keyup)="setName(txt1.value)"/>
+ Employee Salery:<input type="text" [value]=employees.salary/>
+ Employee ID:<input type="text" [value]=employees.empid/>
+and i will define setName method in my employees.component.ts
+setName(val){
+   console.log(val);
+   this.employees.name=val;
+}
+like after this when in view in input text whenever you update or change the name all name are printed in browser console component .
+when i use this line in setName method this.employees.name=val;  so by this in every three text input when you change name in one input text it changes together in every text input box 
+now in employee.component.html 
+also add for two way data binding 
+Employee name:<input type="text" #txt1 [value]=employees.name [(ngModel)]=employees.name/>
+ Employee Salery:<input type="text" [value]=employees.salary [(ngModel)]=employees.salary/>
+ Employee ID:<input type="text" [value]=employees.empid [(ngModel)]=employees.empid/>
+
+ like when in view in this two way data binding part input box when i change name then automatically other three section name input box also changes 
+ and like if i changes salary in this then other three 's salery also changes 
