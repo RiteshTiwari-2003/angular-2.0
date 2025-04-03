@@ -1332,5 +1332,6 @@ Employee name:<input type="text" #txt1 [value]=employees.name [(ngModel)]=employ
  like but how to i know that which is parent and which is child 
  like in parent.component.html when i write selector of other component then that component called parent component and in parent component when 
  i use which component selector that component called as child component .
+  
 
- 
+
