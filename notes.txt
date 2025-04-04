@@ -1462,3 +1462,12 @@ voted(Didvote:boolean){
    this.isDisabled=true;
    this.didVoting.emit(Didvote);
 }
+
+##### component life cycle methods 
+a component in angular has a life cycle , a number of different phases it goes through from birth to death 
+and we call those methods hook,
+the hooks are executed in this order: Constructor, ngOnChange,ngOnInit,ngDoCheck,ngAfterContentInit, ngAfterContentChecked,ngAfterViewInit, ngAfterViewChecked, ngOnDestroy
+these phases are brodly split up into phases that are linked to the component itself,and the phases that are linked up to the children of that component 
+
+the method : Constructor, ngOnchange , ngOnInit, ngDoCheck , ngOnDestroy these are belong to parent component and 
+method ngAfterContentInit , ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked these are belong to child component
