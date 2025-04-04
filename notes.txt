@@ -1399,3 +1399,66 @@ checkMsg(val){
 template:
 <app-child [parentData]=message1 [parentData2]=meassage2 (childData)="checkMsg($event)" ></app-child>
 {{message3}}
+
+#### now i made a voting demo on component interaction 
+lets update parent.component.ts 
+template:`<h1> Angular i sjs framework for spa</h1>
+Agreed:{{agreed}} Disagreed:{{disagreed}}
+<app-child [parentData]=message1 [parentData2]=meassage2 (childData)="checkMsg($event)" > </app-child>`
+both the ariable agreed and disagreed initialize down into ParentComponent 
+agreed:number=0;
+disagreed:number=0;
+
+and in parent.component.ts remove <app-child>...</app-child> line 
+and in ParentComponent class 
+voters=["Mr harry","Mr john","Mr Kevin"];
+
+and in template 
+template:`<h1> Angular i sjs framework for spa</h1>
+Agreed:{{agreed}} Disagreed:{{disagreed}}
+<app-child *ngFor="let voter of voters" [person]=voter></app-child>`
+
+now in child.component.ts update template
+tempate : `<h2> this is a child component</h2>
+{{voter}}`
+and in ChildComponent class i have add this variable : @Input('person') voter:string;
+
+so for is placed in parent component in <app-child></app-child> so for every iteration of for all the template run and executed of child , 
+like 
+this is a child component 
+Mr harry
+this is a child component
+Mr john
+this is child component
+Mr kevin 
+
+now update child.component.ts
+template:`<h1>{{voter}}</h1>
+<input type="button" value="Agree' (click)="voted(true)"/>
+<input type="button" value="Disagree' (click)="voted(false)"/>`
+and in childComponent we write voted() method   voted(Didvote:boolean){
+   this.didVoting.emit(Didvote);
+}
+now i send the data from child to component so in childComponent class add this  @Output() didVoting=new EventEmitter();
+
+now in parent.component.ts 
+tempate:`<h1> Angular i sjs framework for spa</h1>
+Agreed:{{agreed}} Disagreed:{{disagreed}}
+<app-child *ngFor="let voter of voters" [person]=voter (didvoting)="onVoted($event)"></app-child>`
+and in parentComponent class define onVoted() method 
+onVoted(didvoting:boolean){
+   didvoting?this.agreed++:this.disagreed++
+}
+
+now every thing working fine but i want one user only give vote once at a time 
+so in child.component.ts   
+template:`<h1>{{voter}}</h1>
+<input type="button" value="Agree' (click)="voted(true)" [disabled]="isDisabled"/>
+<input type="button" value="Disagree' (click)="voted(false)" [disabled]="isDisabled"/>`
+
+and in childComponent class declare this vaqriable :  isDisabled=flase;
+and when someone click on this button it disabled 
+voted(Didvote:boolean){
+   this.isDisabled=true;
+   this.didVoting.emit(Didvote);
+}
