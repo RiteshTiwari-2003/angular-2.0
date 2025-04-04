@@ -1471,3 +1471,12 @@ these phases are brodly split up into phases that are linked to the component it
 
 the method : Constructor, ngOnchange , ngOnInit, ngDoCheck , ngOnDestroy these are belong to parent component and 
 method ngAfterContentInit , ngAfterContentChecked, ngAfterViewInit, ngAfterViewChecked these are belong to child component
+
+using life cycle hooks we can fine tune thebehaviour of our component during creation , update and destruction .
+
+hooks for the component :
+constructor: it is invoked when angular create a component and directive by calling new on the class 
+ngOnChange: used in pretty much any component that has input , called whenever an input value changes , is called the first time before the ngOnInit
+ngOnInit: added to every component by default by the anguler cli, called only once , invoked when the given component has been initialized this hook is only called once after first ngOnchange.
+ngDoCheck: this is invoked when the change detector of the given component is invoked , it allow us to implement our own change detector algorithm for the given component.
+ngOnDestroy: thismethod will be invoked just before angular destroy the component ,, used to clean up any necessary code when a component is removed from the DOM.
