@@ -1480,3 +1480,28 @@ ngOnChange: used in pretty much any component that has input , called whenever a
 ngOnInit: added to every component by default by the anguler cli, called only once , invoked when the given component has been initialized this hook is only called once after first ngOnchange.
 ngDoCheck: this is invoked when the change detector of the given component is invoked , it allow us to implement our own change detector algorithm for the given component.
 ngOnDestroy: thismethod will be invoked just before angular destroy the component ,, used to clean up any necessary code when a component is removed from the DOM.
+
+hoks for the component children 
+ngAfterContentInit: called only once after first ngDoCheck(), called after first run through of initializing content .
+ngAfterContentChecked(): caled after every ngDoCheck() , waits till after ngAfterContentInit() on first run through 
+ngAfterViewInit(): it is called after angular initializes component and child component content , called only once after view is fully initialize 
+ngAfterViewChecked(): called after the all the content is initialized and checked .(component and child component)
+first call is after ngAfterViewInit(), called after every ngAfterContentChecked() call is completed 
+
+so in parent.component.ts in constructor call add some statement 
+constructor(){
+   console.log("the parent constructor is initialize");
+}  ///so when you run then in browser in cosole you see that parent component constructor called only once after that ngonInit is called three time of child component because there is for loop in voters 
+
+constructor is just called after loading the component , like in parent component constructor is called 
+also in child component update constructor 
+constructor(){
+   console.log("Child component constructor is called");
+}// now when you run the program in console you see parent constructor come only once and child constructor come in three time and child component ngOnInit() called three time because for loop iterate three time
+next is ngOnInit() which come automatically when you are create a component, and called only once when component is initialized just after first ngOnChange()
+so update parent component ngOnInit() methos like 
+ngOnInit(){
+   console.log("Ng on init");
+}// and when you execute the prograsm then in console parent constructor called once and parent ngOnInit called once 
+and child constructor called three time and child component ngOnInit called also three time .
+
