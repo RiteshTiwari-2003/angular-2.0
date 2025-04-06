@@ -1504,4 +1504,78 @@ ngOnInit(){
    console.log("Ng on init");
 }// and when you execute the prograsm then in console parent constructor called once and parent ngOnInit called once 
 and child constructor called three time and child component ngOnInit called also three time .
+now also add ngOnChenages() method in both component 
+parent.component.ts 
+ngOnChange(){
+   console.log("ngOnChanges parent");
+}
+ngDoCheck(){
+   console.log("parent ngDoCheck");
+}// now when you execute then 
+parent consdtructor 
+parent ngOnInit
+parent ngDoCheck
+child constructor(3 times)
+child ngOnInit(3 times )
+parent ngDoChek
+but you can see that ngOnChanges() not showing in console and i know that ngOnChanges and ngDoCheck both not called in same component 
+now in child component called ngAfterContentInit() method so in child.component.ts 
+ngAfterContentInit(){
+   console.log("child ngAfterContentInit");
+}
+ngAfterContentChecked(){
+   console.log("child ngAfterContentChecked");
+}
+//parent consteuctor 
+parent ngonInit
+parent ngDoCheck
+child constructor (3 times )
+child ngOnInit
+child ngAfterContentInit
+child ngAfterContentChecked
+child ngOnInit
+child ngAfterContentInit
+child ngAfterContentChecked
+child ngOnInit
+child ngAfterContentInit
+child ngAfterContentChecked 
+parent ngDoCheck
+
+now in child.component.ts
+ngAfterViewInit(){
+   console.log("ngAfterViewInit");
+}
+ngAfterViewChecked(){
+   console.log("ngAfterViewChecked");
+}
+parent constructor
+parent ngonInit
+parent ngDoCheck
+child constructor (3 times )
+child ngOnInit
+child ngAfterContentInit
+child ngAfterContentChecked
+child ngAfterViewInit
+child ngAterViewChecked
+child ngOnInit
+child ngAfterContentInit
+child ngAfterContentChecked
+child ngAfterViewInit
+child ngAterViewChecked
+child ngOnInit
+child ngAfterContentInit
+child ngAfterContentChecked 
+child ngAfterViewInit
+child ngAterViewChecked
+parent ngDoCheck
+child ngAfterContentChecked 
+ngAfterViewChecked
+child ngAfterContentChecked 
+child ngAfterViewChecked 
+child ngAfterContentChecked 
+child ngAfterViewChecked 
+parent.component.ts  
+ngOnDestroy(){
+   console.log("Destroyed");
+}
 
