@@ -1579,3 +1579,74 @@ ngOnDestroy(){
    console.log("Destroyed");
 }
 
+#### directive 
+in angular there are three type of directive 1. components directive 2. structural directive 3. attribute directive , component directive form the main class 
+it possesses the details about how the componet should be instantiated, processed and utilized at runtime. 
+structursal directive : change the dom layout by adding and removing dom element .
+examplle : ngForOf , ngif , ngSwitch 
+attribute directive : change the appearence and behaviour of element and component , ex : ngStyle , ngClass, ngModel 
+
+2. structural directive :
+### al directive belong to @angular/common/src/directive 
+built in structural diretive : ngIf: conditionally add or remove an element from the dom , ngsitch: a set of directive that switch among 
+alternative views 
+ngForOf: repeat a template for each item in a list 
+ngif syntex: 
+simple form : <div *ngIf="condition"></div>
+<ng-template [ngIf]="condition"> <div></div></ng-templlate>
+form with else block :
+<div *ngIf="condition;else elseBlock"></div>
+<ng-tempate #elseBlock></ng-template>
+form with then and the else block 
+<div *ngIf="condition; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock></ng-template>
+<ng-template #elseBlock></ng-template>
+
+form with storing the value locally: <div *ngIf="condition as value;else elseBlock">{{value}}</div>
+lets create a login page first create a component login : ng g c components/login 
+and in login.component.ts in template : ` User Name: <input type="text" />
+Password: <input type ="text"/>
+<input type="button" (click)="login()">`,
+now in login.component.ts in LoginComponent class , i write login() method 
+and also declare variable isLoggedIn:boolean=false;
+login(){
+   this.isLoggedIn=true;
+}
+now update login.component.ts template 
+template : `User Name: <input type="text" />
+Password: <input type ="text"/>
+<input type="button" (click)="login()">
+<div *ngIf="isLoggedIn">You logged in</div>
+<div *ngIf="!LoggedIn">You have not logged in </div>`,
+or you can also write above two line like this that 
+<div *ngIf="isLoggedIn; else elseBlock">You Logged IN</div>
+<ng-template #elseBlock>you have not logged in </ng-template>
+
+### ngSwitch syntex:
+<div [ngSwitch]="color">
+<div *ngSwitchCase="red">you picked red</div>
+<div *ngSwitchCase="blue">you picked blue </div>
+<div *ngSwitchCase="green">you picked green</div>
+<div *ngSwitchDefault>try again</div>
+</div>
+
+### ngForOf syntex:
+<li *ngFor="let user of users;index as i;first as isFirst">{{i}}/{{users.length}}{{user}}{{isFirst}}</li>
+index:number: the index of the current item in the iterable 
+first:boolean: true when the item is the first item in the iterable 
+last:boolean: true when the item is the last item in the iterable .
+even:boolean: true when the item has an even index in the iterable .
+odd:boolean: true when the item has a odd index in the iterable .
+now in login.component.ts in template 
+template: `User Name: <input type="text" />
+Password: <input type ="text"/>
+<input type="button" (click)="login()">
+<div *ngIf="isLoggedIn; else elseBlock">You Logged IN</div>
+<ng-template #elseBlock>you have not logged in </ng-template>
+<select>
+<option></option><select>`,
+now in LoginComponent class I created a colors array 
+colors=["red","yellow","blue","green"];
+<select>
+<option *ngFor="let color of colors"></option>
+</select>
