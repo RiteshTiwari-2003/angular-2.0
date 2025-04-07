@@ -1648,5 +1648,6 @@ Password: <input type ="text"/>
 now in LoginComponent class I created a colors array 
 colors=["red","yellow","blue","green"];
 <select>
-<option *ngFor="let color of colors"></option>
-</select>
+<option *ngFor="let color of colors; index as i;first as isFirst">{{i}}{{color}}{{isFirst}}</option>
+</select>//like in dropdown dropdown come like this like 0redtrue,1yellofalse,2bluefalse,3greenfalse, and like if in above code in option tag if you update the code like this 
+that first as isFirst replace by even as isFirst then  dropdown look like this 0redtrue, 1yellowfalse,2bluetrue,3greenfalse
