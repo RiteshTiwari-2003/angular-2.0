@@ -1651,3 +1651,73 @@ colors=["red","yellow","blue","green"];
 <option *ngFor="let color of colors; index as i;first as isFirst">{{i}}{{color}}{{isFirst}}</option>
 </select>//like in dropdown dropdown come like this like 0redtrue,1yellofalse,2bluefalse,3greenfalse, and like if in above code in option tag if you update the code like this 
 that first as isFirst replace by even as isFirst then  dropdown look like this 0redtrue, 1yellowfalse,2bluetrue,3greenfalse
+now whenever user select from dropdown put a onchange event function like whenever user select any option then this function automatically called
+<select (change)="getMeSelectedValue($event)">
+<option *ngFor="let color of colors">{{color}}</option>
+</select>
+like now in LoginComponent class declare that variable or function 
+getMeSelectedValue(event){
+   console.log(event.target.value);// so in ui whatever you selected that value come or display in console
+
+}
+now  i want to assign a variable in LoginComponent 
+selectedColor:string;
+getMeSelectedValue(event){
+   console.log(event.target.value);
+   this.selectedColor=event.target.value;
+}
+now i am going to write ngSwitch things in template , in login.component.ts in template 
+template : `User Name: <input type="text" />
+Password: <input type ="text"/>
+<input type="button" (click)="login()">
+<div *ngIf="isLoggedIn; else elseBlock">You Logged IN</div>
+<ng-template #elseBlock>you have not logged in </ng-template>
+<select (change)="getMeSelectedValue($event)">
+<option *ngFor="let color of colors">{{color}}</option><select>
+<div [ngSwitch]="selectedColorolor">
+<div *ngSwitchCase="'red'">you picked the {{selectColor}} and you are lovable</div>
+<div *ngSwitchCase="'green'"> you picked {{selectedColor}} and you are love nature </div>
+<div *ngSwitchCase="'yellow'"> you picked {{selectedColor}} and its sunshine</div></div>`,
+
+#### atribute directive
+attribute directive listen to and modify the behaviour of other html element , attributes , properties and component 
+like ngStyle:
+like in login.component.ts 
+i want to give user name input some color then i can write 
+template :`user Name:<input type="text" style="background-color:red"/></br>// but obiusly this is static change not dynamic change and i want to perform dynamic change 
+user name: <input type="text" [ngStyle]="{'background-color':'red'}"
+but i want to do dynamic like make or add some method like focus 
+user name: <input type="text" (focus)="changeColor($event)" [ngStyle]="{'background-color':'red'}"/>
+in LoginComponent 
+changeColor(event){
+   this.isfocused=true;
+}
+and aldso declare a variable in LoginComponent 
+isFocused:boolean=false;
+// now according to this change color 
+user name: <input type="text" (focus)="changeColor($event)" [ngStyle]="{'background-color':isFocused?'red':'green'}"/>
+like when you come on this input then this become red but when you go from this input to other or avoid focus from this then remain the color red ike when it was focused so i want that when i focused on this input then this input become red and when i remove focus from this 
+input then it become green 
+for this i add one more method 
+user name: <input type="text" (focus)="changeColor($event)" (blur)="reverseColor($event)" [ngStyle]="{'background-color':isFocused?'red':'green'}"/>
+and in Logincomponent 
+i just write another one method 
+reverseColor(event){
+   this.isFocused=false;
+}
+and i you want add some oyther style in ngstyle then seperate styles from each other using comma 
+user name: <input type="text" (focus)="changeColor($event)" (blur)="reverseColor($event)" [ngStyle]="{'background-color':isFocused?'red':'green','color':'blue','font-size':'100px'}"/>
+now lets talk about other attribute directive which is ngClass:
+
+ngclass syntex: 
+<some-element [ngClass]="{'text-success':true}">..</some-element>, <button [ngClass]="{'btn btn-primary'}">..</button>,
+<button [ngClass]="{['btn','btn-primary']}"
+
+third directive is ngModel ngModel is used for two way data binding where i perform event binding and property binding together 
+user name: <input type="text" [(ngModel)]=name (focus)="changeColor($event)" (blur)="reverseColor($event)" [ngStyle]="{'background-color':isFocused?'red':'green','color':'blue','font-size':'100px'}"/>
+and this name declared in Logincomponent class 
+name="ntellipaat";
+then in login.component.ts in template 
+<div *ngIf="isLoggedIn"; then thenBlock else elseBlock"></div>
+<ng-template #thenBlock> Hi {{name}}</ng-template>
+<ng-template #elseBlock> You have not logged in </ng-template>
