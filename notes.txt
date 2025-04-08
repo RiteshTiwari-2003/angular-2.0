@@ -1721,3 +1721,14 @@ then in login.component.ts in template
 <div *ngIf="isLoggedIn"; then thenBlock else elseBlock"></div>
 <ng-template #thenBlock> Hi {{name}}</ng-template>
 <ng-template #elseBlock> You have not logged in </ng-template>
+
+### CUSTOM DIRECTIVE 
+custom directive means nothing these are again a attribute directive 
+create the directive class file in a termianl window with the cli command ng generate directive appHighLight
+apply in template <p appHighLight></p>
+in apphighlight direct9ive these component present 
+import {Directive, ElementRef} from '@angular/core';
+@Directive({selector:'[apphighLight]'})
+export class HighlightDirective {
+   
+}
