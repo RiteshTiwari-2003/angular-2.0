@@ -1730,5 +1730,26 @@ in apphighlight direct9ive these component present
 import {Directive, ElementRef} from '@angular/core';
 @Directive({selector:'[apphighLight]'})
 export class HighlightDirective {
+   constructor(el:Elementref){
+      el.nativeElement.style.backgroundColor='Yello';}
    
+
+}
+
+custom directive (attribute directive with Listner )
+import {Directive, ElementRef} from '@angular/core';
+@Directive({selector:'[apphighLight]'})
+export classs HighlightDirective{
+   constructor(private e1:ElementRef){
+
+   }
+   @HostListner('mouseenter')onMouseEnter(){
+      this.highlight('yellow');
+   }
+   @HostListner('mouseleave')onMouseLeave(){
+      this.highlight(null);
+   }
+   private highlight(color:string){
+      this.e1.nativeElement.style.backgroundColor=color;
+   }
 }
