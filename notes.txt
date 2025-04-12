@@ -1758,4 +1758,98 @@ export classs HighlightDirective{
 create two component employee-list and employee-details-table using ng g c componet-name 
 then call these both component in app.component.html 
 <h1> Emplyee List</h1>
-<app-employee-list>
+<app-employee-list></app-employee-list>
+<br/>
+<h1> Employee Details </h1>
+<app-employee-details></app-employee-deatils>
+employee-list.component.ts 
+template:`<table border=2>
+<tr><th>id</th></tr>
+<tr *ngFor="let emp of empoyees"><td>{{emp.name}}</td></tr>
+</table>`,
+
+export class EmployeelistComponent implements OnInit{
+   construcot(){
+
+   }
+   employees=[{id:1001,name:"John",salary:45000,joiningDate:new Date()},
+   {id:1002,name:"Smith",salery:25000,joiningdate:new Date()},
+   {id:1003,name:"Harry",salery:55000,joiningdate:new Date()},
+   {id:1004,name:"Potter",salery:35000,joiningDate:new Date()}];
+   ngOnInit(){
+
+   }
+}
+and in employee-deatils-list.component.ts 
+again same array i will give in the component class and in template i should only change the structure of html
+template:`<table border=2><tr><th>ID</th><th>name</th><th>Joining date</th><th>Salery</th></tr>
+<tr *ngFor="let emp of employee"><td>{{emp.id}}</td><td>{{employee.name}}</td><td>{{employee.joiningdate}}</td><td>{{employee.salery}}</td></tr></table>`,
+
+sio here is error not but this code is not much optimal you use same variable again again at the different type in different different component 
+so best method is to initialize that variable which use in multiple component in another new file which is called as service and import that wherever you require this 
+variable 
+basically a box which is module then in  between this box i have two thing component and services 
+we know that module is like app.module.ts and module contains component and inside module other than component we have also services 
+so what is the services so again it is the .ts class , it share the data , it implement the application logic 
+services are great way to share information among classes that dont know each other 
+component should not fetch or save data directly and they certainly should not knowingly 
+present fake data.they should focus on presenting data and delegate the data access to the services 
+so component work that it display the data but how to fetch thd data it is responsibility of services 
+so inside the component you call the services , services fetch the data and give to component and component display the data.
+
+so first create service by the use of this command ng g s employeesservice
+when you run this command on terminal then it create two file src/app/employeesservice.service.spec.ts
+src/app/employeeservice.service.ts
+and when you see service file like employeeservice.service.ts file then 
+import {@Injectable} from '@angular/core';
+@Injectable(
+   {
+      providedIn:"root",
+   }
+)
+export class EmployeeListService{
+   constructor(){
+
+   }
+}
+so i just removing empoyees variable from both component class and put inside service like this 
+export class empoyeelistservice{
+   constructor(){
+
+   }
+   employees=[{id:1001,name:"John",salary:45000,joiningdate:new Date()},
+   {id:1002,name:"Prateek",salary:25000,joiningDate:new Date()},
+   {id;1003,name:"Shashwat",salery:55000,joiningDate:new Date()},
+   {id:1004, name:"Prateek",salery:35000,joiningDate:new Date()}];
+}
+and in servcie.ts file like in above file in EmployeesListServices i write one more method to return the employee to every component which have requirement of employees variable.
+getEmployees(){
+   return this.employees;
+}
+and alo in app.module.ts import service class manually like 
+import {EmployeesserviceService} from './employeeservice.service';
+and in @NgModel inside the provider key put the this services 
+providers:[EmployeesserviceService],
+
+and also import EmployeeservicesService in all that component using import statement which have requirement about services 
+like in employee-list.component.ts 
+import {EmployeeserviceService} from "./hhjkml";
+and in in EmployeeListComponent class in constructor pass the service as a parameter 
+constructor(private _service:EmployeesserviceService){
+
+}
+the moment i put the parameter of service in constructor on that momwent i created a object of service which is _service
+and also in service one getEmployee method present so we call that method in component class in ngonInit(){
+
+} life cycle method
+ngOnInit(){
+   this._service.getEmployees();
+}
+and also i declare a variable inside coponent class 
+emps=[];
+then 
+ngOnInit(){
+   this.emps=this._service.getEmployees();
+}
+now in template in line of that let emp of employee we can put let emp of emps in ngfor line
+so we use Injectable interface in service.ts fie so i injected the service and use it 
