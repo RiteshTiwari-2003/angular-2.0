@@ -1753,3 +1753,9 @@ export classs HighlightDirective{
       this.e1.nativeElement.style.backgroundColor=color;
    }
 }
+
+### now i want to make employee list table and employee table component
+create two component employee-list and employee-details-table using ng g c componet-name 
+then call these both component in app.component.html 
+<h1> Emplyee List</h1>
+<app-employee-list>
