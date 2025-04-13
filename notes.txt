@@ -1915,3 +1915,100 @@ export class SqrtPipe implements pipeTransform {
 }
 like in employee-details component folder i created customPipe.ts file 
 
+now we make custom pipes using command ng g p customPipe  when you write this command and run on terminal then automatically after execution of this command 
+three file created in project directory 
+src/app/custom.pipe.ts
+src/app/custom.pipe.sec.ts
+src/app/app.module.ts 
+like inside app.module.ts it is imported and in declaration CustomPipe come 
+now check custom.pipe.ts 
+import {Pipe, PipeTransform} from "@angular/core";
+@Pipe{
+   {name:'sqrt'}
+}
+export class SqrtPipe implements pipeTransform {
+   transform(value:any,args?:any):any{
+      return "Intellipaat";
+   }
+}
+now in emplyee-details.component.ts in template i update thing like this 
+<td>{{emp.name|custom}}</td>
+and when you checkout ui then in name section in all row intellipaat value show
+so in transform(value;any,args?:any);any{} line vaue represent input value like emp.name each vaue like if you want to print value in tranform function 
+then in console all employee name come on console 
+like when you write transform function like this 
+transform(value:any,args?:any):any{
+      return "Intellipaat "+value;
+   }
+so in table in name column in all different different row different different name come 
+like welcome john , welcome potter like stc 
+
+#### http and observable 
+so service is nothing but have a actual data where that is service so whenever component want data real data it ask servic that give  data 
+but in real time world data fetched from server 
+so we fetch employee array data type of code from http call to the server 
+http mechanism 
+like we have two component emplist empdetails and one service empservice so currently our hard coded data is here 
+in the empservice , so componennts are asking from service that hey service give me the data 
+but now we have get that data throw the http call , from empservice we request to the server throug http service or protocal to the db that hey get me the data
+so the database send the response to the http server or protocal then http protocal send observable 
+to the empservice means http send the data to the empservice in the observable format 
+once the respionse get in from observable format to the empservice then it converted into desirable format and send backed
+to the components.
+### what is the http client?
+most frontend application communicate with backend services over the http protocal using 
+the XmlHttpRequest interface 
+the HttpClient in @angular/common/http offers a simpified client http api for angular application 
+that rests on the XmlHttpRequest interface exposed by browser.
+
+what are the steps :
+you need to import HttpClientModule from @angular/common/http
+Http get request from empService
+receive the observable and cast it into an employee array
+subscribe to the oservable from EmpList and EmpDetails 
+assign the employee array to local variable 
+
+so in app.module.ts first import 
+import {HttpClientModule} from '@angular/common/http';
+an also in @NgModule(
+   in import key import this HttpClientModule
+)
+and also make sure that in providers key also EmployeeserviceService imported 
+so what should i do instead of getting data from service.ts like employees array get the data from json file 
+like create a jsondata 
+so i create a file emps.json in assets folder , once the you get the data from server then at the place of emp.json file url you place the server url 
+now in emplyeeservice.service.ts 
+i remove the all data from employees list like employees=[];
+private url:string="../assets/emp.json";
+in service.ts file first i import Httpclient 
+import {HttpClient} from "@angular/common/http";
+and this particuler thing you give as a parameter inside constructor 
+constructor( private http:HttpClient){
+
+}
+and in employeeservice.service.ts 
+getEmployees(){
+   return this.http.get(this.url);
+}// so this.http.get( ) hwta is this returning you this returning you observable 
+so you need to convert into desiarable format , so what is the desirable format like array 
+so i want data  in a array format employee ,
+so i make one file app/employee.ts , in this have a interface which tell how your employees or array structure have 
+in employees.ts 
+export interface IEmployee{
+   id:number,
+   name:string,
+   salery:number,
+   joiningdate:string,
+
+}
+now lets import this interface into service 
+import {IEmployee} from './employees';
+and 
+getEmployees(){
+   return this.http.get<IEmployee[]>(this.url);
+}
+now in component file error come 
+in employee-list.component.ts 
+ngOnInit(){
+   this._service.getEmployee().subscribe(data=>this.emps=data)}
+   also in employee-details.component.ts same above things i performed 
