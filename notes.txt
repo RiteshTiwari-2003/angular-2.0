@@ -1853,3 +1853,22 @@ ngOnInit(){
 }
 now in template in line of that let emp of employee we can put let emp of emps in ngfor line
 so we use Injectable interface in service.ts fie so i injected the service and use it 
+what are pipes ?
+pipes are used to transform data before it gets display on template.
+angular provide some build in pipes , the pipes list are below:
+Lowecasepipe, Uppercasepipe , Datepipe, Currencypipe, Jsonpipe, Percentpipe, Decimalpipe,Slicepipe
+
+#### currencypipe: this pipe is used for formatting currency , its first argument is an abbreviation of the currecny type 
+(EUR,USD and so on ).
+{{1234.5|currency:'GBP'}}
+like ion above exampe in employee-etail-list component in template we use this 
+template:`
+<table border=2>
+<tr><th>ID</th><th>Name</th><th>Joining date</th><th>Salery</th></tr>
+<tr *ngFor="let emp of employee">
+<td>{{emp.id}}</td>
+<td>{{emp.name}}</td>
+<td>{{emp.joiningdate}}</td>
+<td>{{emp.salery | currency}}</td></tr>
+</table>` soafter this update when you see ui 
+then in salery column in evry row in starting $ symbol come before number 
