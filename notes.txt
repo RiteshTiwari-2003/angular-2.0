@@ -1872,3 +1872,46 @@ template:`
 <td>{{emp.salery | currency}}</td></tr>
 </table>` soafter this update when you see ui 
 then in salery column in evry row in starting $ symbol come before number 
+so by default it is doller but if you want to put any other contry symbol of currency then you can put like this 
+{{emp.salery | currency:"JDP"}}
+
+#### Json pipes :
+it transform the javascript object into a jjson string like so 
+var obj={moo:'foo',goo:{too:'new'}}
+{{obj| json}}
+the abpve print out : {"moo":"foo","goo":{"too":"new"}}
+
+#### lower case and upper case pipes 
+this transform your string into lowercase like so: {{Intellipaat| lowercase}}  output intellipaat
+similarly uppercase : {{Intellipaat | uppercase}} output : INTELLIPAAT and 
+third one titlecase : {{welcome to intellipaat | titlecase}}
+
+#### slice pipes 
+thisreturn a slice of an array , the first argument is the start index of the slice and second argument is the end index .
+var str="welcome to intellipaat";
+{{str| slice:2:3}} 
+number pipes :
+this pipes is used for transformation of the number
+{{5.678|number:'1.2-3'}}// 1 is for main integer and 2-3 for decimal part 
+like above output is 5.678 
+{{5.678 | number:'3.2-4'}}  // output is 005.6780
+
+#### percent pipes :
+this pipes is used for the tranformation of number into percentage {{.25 | percent}}  the out put is 25%
+
+### date pipes :
+the pipes are used to tranformation of dates . the first argument is a format string {{mydate | date}}
+
+#### custom pipes demo
+how to create custom pipes ? you need to create .ts file 
+import {Pipe, PipeTransform} from "@angular/core";
+@Pipe{
+   {name:'sqrt'}
+}
+export class SqrtPipe implements pipeTransform {
+   transform(val:number):number{
+      return Math.sqrt(val);
+   }
+}
+like in employee-details component folder i created customPipe.ts file 
+
