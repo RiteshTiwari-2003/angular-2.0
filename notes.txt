@@ -2012,3 +2012,71 @@ in employee-list.component.ts
 ngOnInit(){
    this._service.getEmployee().subscribe(data=>this.emps=data)}
    also in employee-details.component.ts same above things i performed 
+
+#### angular forms 
+forms are very importent to your business applications 
+as a developer we need to take care of these points 
+1. Data Binding 
+2. change tracking 
+3. validation 
+4. visual feedback 
+5. error merssage 
+6. form submission 
+simple in the component what we need to create component in the template you ask your user to write the data 
+or you are going to cllect your data 
+once you collect the data you pass the information inside the class to bind the data 
+once the bind the data you send that data to the service , finally service interact with the server to submit that data what user enter in the template 
+what are forms ?
+one is reactive and one is template driven form , reactive form havey on component class, and template drive form heavy on component template 
+reactive form are more reusable , scalable, and testable and more robust .
+and template drive form are useful for adding a simple form to an app, such as an email list sign up form , 
+easy to add in an app but they dont scal as much as reactive forms.
+
+ ### template driven form :
+ easy to use and very much similer to angular js form 
+rely on two way data binding with ngModel, heavy html code and minimum component code 
+automatically track the form and form element state and validity
+drawback is the challenge in the unit testing 
+readability decrese with complex form and validations
+
+model driven form :(reactive forms)
+code and logic resides in the component class 
+no two way databinding , suited for complex senario, dynamic form field , custom validation , dynamic validation and unit test 
+
+## key differnece between reactive form and template driven form :
+set up(form model):
+more explicit and created in component class for reactive form , 
+less explicit created in directive in template drive form 
+data model:
+structured data model use in reactive form 
+and unstructured data model use in tempate drive form .
+predectibility :
+synchronous in reactiv form 
+asynchronous in template drive form 
+form validation:
+functions in reactive form ,
+directive in template ddrive form 
+mutability:
+immutable reactive forms 
+mutable template druve form 
+scalability 
+low level api access in reactive form 
+abstraction on top of api in template drive form 
+
+@## step for tdf forms or template drive form :
+first you need to create new cli project .
+add the form html 
+binding data
+tracking state and validity 
+providing visual feedback 
+deploying error message 
+submitting data to the server 
+step for reactive :
+first you need to create cli project 
+add the form html
+create the form model 
+manage the form controls values 
+formBuilder service 
+validation 
+dynamic form control 
+submitting form data 
