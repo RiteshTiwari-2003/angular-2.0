@@ -2099,3 +2099,4 @@ now i come to students.component.ts file
 in StudentsComponent class 
 i declare a variable like subjects ;   subjects=["Hindi","science","Math","English"];
 #### angular is oen source frontend framework which basically workk on typescript
+#### submitting form data on express server
